@@ -5,6 +5,12 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
 
 ## 2026-08-07
 
+
+- **Home:** The "NEW" badge on announcements is now automatic. Each dated
+  announcement carries a `data-date`, and a small script shows the NEW badge
+  only while the item is within the last 30 days, so it expires on its own.
+  Applied in both `index.html` and `_tools/build.py`.
+
 - **Home:** Reordered the "Latest Announcements" list to newest-first. The
   "Paper submission is now open" item (August 6) now sits at the top, above the
   two July 31 items (important dates, then Call for Papers). Applied in both

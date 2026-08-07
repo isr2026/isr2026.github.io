@@ -179,18 +179,16 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
-          <li class="announcement-item">
+          <li class="announcement-item" data-date="2026-08-06">
             <span class="announcement-date">August 6, 2026</span>
             <a href="submission.html">
-              <span class="badge badge-new">NEW</span>
               Paper submission is now open &mdash; submit via IEEE RAS PaperPlaza
             </a>
           </li>
 
-          <li class="announcement-item">
+          <li class="announcement-item" data-date="2026-07-31">
             <span class="announcement-date">July 31, 2026</span>
             <a href="dates.html">
-              <span class="badge badge-new">NEW</span>
               Important dates updated &mdash; paper submission deadline extended to August 28, 2026
             </a>
           </li>
@@ -204,6 +202,25 @@ f"""
           </li>
         </ul>
       </div>
+
+      <script>
+        // Show the NEW badge only on announcements from the last 30 days.
+        (function () {{
+          var MAX_DAYS = 30;
+          var today = new Date();
+          document.querySelectorAll('.announcement-item[data-date]').forEach(function (item) {{
+            var posted = new Date(item.getAttribute('data-date') + 'T00:00:00');
+            var ageDays = (today - posted) / 86400000;
+            if (ageDays < 0 || ageDays > MAX_DAYS) return;
+            var link = item.querySelector('a');
+            if (!link || link.querySelector('.badge-new')) return;
+            var badge = document.createElement('span');
+            badge.className = 'badge badge-new';
+            badge.textContent = 'NEW';
+            link.insertBefore(badge, link.firstChild);
+          }});
+        }})();
+      </script>
     </section>
 
     <section class="section" aria-label="Conference imagery">
