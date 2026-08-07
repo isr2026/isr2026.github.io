@@ -57,26 +57,23 @@
     <section class="section">
       <!--
         ==========================================================================
-        WEB CHAIR NOTE - submission system status
-        The source pages disagreed: index.html (July 31) said the system was
-        "coming soon" (PaperPlaza), while submission.html linked to the GENERIC
-        PaperCept entry page, which is not conference-specific.
-        This page therefore states "to be announced" and the button is disabled.
-        To open submissions: replace the aria-disabled span below with a real
-        link to the conference-specific submission URL, e.g.
-        <a class="btn btn-primary" href="https://ras.papercept.net/conferences/scripts/start.pl?..."
-           target="_blank" rel="noopener noreferrer">Submit Your Paper</a>
-        and change the notice-box class from "" to "success".
+        WEB CHAIR NOTE - submission system
+        Opened August 6, 2026. SUBMIT_URL is the GENERIC IEEE RAS PaperPlaza
+        entry page, which lists every open RAS conference; authors must select
+        "ISR-SIAS 2026" themselves. If the Program Chair supplies the
+        conference-specific PaperPlaza URL, change SUBMIT_URL at the top of this
+        file and delete the "select ISR-SIAS 2026" wording in the two places
+        below.
         ==========================================================================
       -->
-      <div class="notice-box">
-        <div class="notice-icon" aria-hidden="true">!</div>
+      <div class="notice-box success">
+        <div class="notice-icon" aria-hidden="true">&#10003;</div>
         <div>
-          <strong>The online submission system will be announced shortly.</strong>
+          <strong>The online submission system is now open.</strong>
           <p>
-            Authors should prepare their manuscripts now so that they are ready to submit before the
-            <strong>August 28, 2026</strong> deadline. The submission link will be published on this page
-            and announced on the <a href="index.html">home page</a>.
+            Submit your manuscript through IEEE RAS PaperPlaza before the
+            <strong>August 28, 2026</strong> deadline. On the PaperPlaza page, select
+            <strong>ISR-SIAS 2026</strong> from the list of conferences.
           </p>
         </div>
       </div>
@@ -104,11 +101,15 @@
         <div class="card">
           <h3>Submission portal</h3>
           <p>
-            The official submission portal has not been published yet. Please check back, or refer to the
-            Call for Papers PDF.
+            Papers are submitted through <strong>IEEE RAS PaperPlaza</strong>. Select
+            <strong>ISR-SIAS 2026</strong> from the conference list on the PaperPlaza page.
           </p>
           <p>
-            <span class="btn btn-primary" aria-disabled="true" role="link">Submission system &mdash; TBA</span>
+            <a class="btn btn-primary btn-lg btn-block"
+               href="https://ras.papercept.net/conferences/scripts/start.pl"
+               target="_blank" rel="noopener noreferrer">
+              Submit Your Paper &rarr;
+            </a>
           </p>
           <p>
             <a class="btn btn-blue" href="assets/docs/ISRSIAS2026_cfp_2st.pdf" target="_blank" rel="noopener noreferrer">
@@ -193,8 +194,9 @@
         <details>
           <summary>Where do I submit my paper?</summary>
           <p>
-            The online submission system will be announced on this page. Please check back before the
-            August 28, 2026 deadline.
+            Through <a href="https://ras.papercept.net/conferences/scripts/start.pl" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>,
+            selecting <strong>ISR-SIAS 2026</strong> from the conference list. Submissions close on
+            August 28, 2026.
           </p>
         </details>
 
@@ -246,8 +248,7 @@
       </div>
 
       <p>
-        &copy; 2026 IEEE ISR/SIAS 2026. &nbsp;
-        <a href="https://unit.aist.go.jp/ircwb/isrsias2026" target="_blank" rel="noopener noreferrer">Official gateway (AIST)</a>
+        &copy; 2026 IEEE ISR/SIAS 2026.
       </p>
     </div>
   </footer>

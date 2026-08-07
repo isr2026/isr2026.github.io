@@ -261,6 +261,14 @@ img { max-width: 100%; display: block; }
 .btn-blue { background: var(--ieee-blue); color: var(--white); }
 .btn-blue:hover { background: var(--deep-blue); transform: translateY(-2px); }
 
+/* Larger call-to-action, used for the submission portal button */
+.btn-lg {
+  min-height: 58px;
+  padding: 16px 30px;
+  font-size: 1.08rem;
+}
+.btn-block { display: flex; width: 100%; }
+
 .btn[aria-disabled="true"] {
   background: #e4eaf0;
   color: var(--muted);

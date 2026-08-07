@@ -2,7 +2,8 @@
 """Emits plain static HTML for isr2026.github.io. Output needs no build step."""
 import os, io
 
-OUT = "/sessions/gallant-ecstatic-brown/mnt/isr2026/isr2026.github.io"
+# Repo root: this script lives in _tools/, so write one level up.
+OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SITE_URL   = "https://isr2026.github.io/"
 CONF_TITLE = "IEEE ISR/SIAS 2026"
@@ -11,8 +12,10 @@ CONF_FULL  = ("2026 IEEE International Conference on Intelligence and Safety for
 CONF_DATES = "December 2–4, 2026"
 CONF_VENUE = "INTEX Osaka, Osaka, Japan"
 CFP_PDF    = "assets/docs/ISRSIAS2026_cfp_2st.pdf"
-AIST_URL   = "https://unit.aist.go.jp/ircwb/isrsias2026"
-CONTACT_EMAIL = "isrsias2026-contact@example.org"   # <-- PLACEHOLDER: replace before launch
+# Generic IEEE RAS PaperPlaza entry page. Replace with the conference-specific
+# URL when the Program Chair supplies it (see the note on the submission page).
+SUBMIT_URL = "https://ras.papercept.net/conferences/scripts/start.pl"
+CONTACT_EMAIL = "M-isrsias2026-info-ml@aist.go.jp"
 
 NAV = [
     ("index.html",        "Home"),
@@ -93,8 +96,7 @@ def foot():
       </div>
 
       <p>
-        &copy; 2026 {CONF_TITLE}. &nbsp;
-        <a href="{AIST_URL}" target="_blank" rel="noopener noreferrer">Official gateway (AIST)</a>
+        &copy; 2026 {CONF_TITLE}.
       </p>
     </div>
   </footer>
@@ -186,12 +188,11 @@ f"""
           </li>
 
           <li class="announcement-item">
-            <span class="announcement-date">July 31, 2026</span>
-            <span>
-              <span class="badge badge-soon">SOON</span>
-              The online paper submission system will be announced shortly.
-              <a href="submission.html">Submission details</a>
-            </span>
+            <span class="announcement-date">August 6, 2026</span>
+            <a href="submission.html">
+              <span class="badge badge-new">NEW</span>
+              Paper submission is now open &mdash; submit via IEEE RAS PaperPlaza
+            </a>
           </li>
 
           <li class="announcement-item">
@@ -503,47 +504,64 @@ f"""
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>Registration is not yet open.</strong>
+          <strong>Online registration is not yet open.</strong>
           <p>
-            Fees, categories, and the online registration system are being finalised. This page will be
-            updated as soon as details are confirmed.
+            Registration fees are listed below. The early-bird deadline and the online
+            registration system will be announced on this page shortly.
           </p>
         </div>
       </div>
-
-{tba('Registration categories and fees (IEEE member, non-member, student, and accompanying person) will be published here, together with the registration deadlines and payment methods.')}
     </section>
 
     <section class="section">
       <div class="section-heading">
-        <span class="kicker">What to expect</span>
-        <h2>Planned Registration Categories</h2>
+        <span class="kicker">Fees</span>
+        <h2>Registration Fees</h2>
         <p>
-          The categories below are indicative and are provided for budgeting purposes only. Final categories
-          and fees will be confirmed on this page.
+          All fees are shown in Japanese yen (JPY) and include applicable taxes. The
+          early-bird registration deadline will be announced soon.
         </p>
       </div>
 
-      <div class="grid-4">
-        <article class="card">
-          <h3>IEEE Member</h3>
-          <p>Fee to be announced</p>
-        </article>
-        <article class="card">
-          <h3>Non-member</h3>
-          <p>Fee to be announced</p>
-        </article>
-        <article class="card">
-          <h3>Student</h3>
-          <p>Fee to be announced</p>
-        </article>
-        <article class="card">
-          <h3>Extra pages</h3>
-          <p>
-            Final manuscripts are 4&ndash;6 pages. Up to two extra pages are allowed for an additional fee.
-          </p>
-        </article>
+      <div class="table-wrap">
+        <table class="date-table">
+          <caption>IEEE ISR/SIAS 2026 registration fees (JPY)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Category</th>
+              <th scope="col">Early-bird</th>
+              <th scope="col">On-site</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IEEE Member</td>
+              <td>&yen;70,000</td>
+              <td>&yen;80,000</td>
+            </tr>
+            <tr>
+              <td>Non-member</td>
+              <td>&yen;80,000</td>
+              <td>&yen;90,000</td>
+            </tr>
+            <tr>
+              <td>IEEE Member (Student)</td>
+              <td>&yen;40,000</td>
+              <td>&yen;50,000</td>
+            </tr>
+            <tr>
+              <td>Non-member (Student)</td>
+              <td>&yen;50,000</td>
+              <td>&yen;60,000</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
+      <p style="color: var(--muted); font-size: 14px; margin-top: 14px;">
+        Early-bird rates apply until the early registration deadline (to be announced).
+        On-site rates apply thereafter, including registration at the venue.
+      </p>
     </section>
 
     <section class="section">
@@ -571,26 +589,23 @@ f"""
     <section class="section">
       <!--
         ==========================================================================
-        WEB CHAIR NOTE - submission system status
-        The source pages disagreed: index.html (July 31) said the system was
-        "coming soon" (PaperPlaza), while submission.html linked to the GENERIC
-        PaperCept entry page, which is not conference-specific.
-        This page therefore states "to be announced" and the button is disabled.
-        To open submissions: replace the aria-disabled span below with a real
-        link to the conference-specific submission URL, e.g.
-        <a class="btn btn-primary" href="https://ras.papercept.net/conferences/scripts/start.pl?..."
-           target="_blank" rel="noopener noreferrer">Submit Your Paper</a>
-        and change the notice-box class from "" to "success".
+        WEB CHAIR NOTE - submission system
+        Opened August 6, 2026. SUBMIT_URL is the GENERIC IEEE RAS PaperPlaza
+        entry page, which lists every open RAS conference; authors must select
+        "ISR-SIAS 2026" themselves. If the Program Chair supplies the
+        conference-specific PaperPlaza URL, change SUBMIT_URL at the top of this
+        file and delete the "select ISR-SIAS 2026" wording in the two places
+        below.
         ==========================================================================
       -->
-      <div class="notice-box">
-        <div class="notice-icon" aria-hidden="true">!</div>
+      <div class="notice-box success">
+        <div class="notice-icon" aria-hidden="true">&#10003;</div>
         <div>
-          <strong>The online submission system will be announced shortly.</strong>
+          <strong>The online submission system is now open.</strong>
           <p>
-            Authors should prepare their manuscripts now so that they are ready to submit before the
-            <strong>August 28, 2026</strong> deadline. The submission link will be published on this page
-            and announced on the <a href="index.html">home page</a>.
+            Submit your manuscript through IEEE RAS PaperPlaza before the
+            <strong>August 28, 2026</strong> deadline. On the PaperPlaza page, select
+            <strong>ISR-SIAS 2026</strong> from the list of conferences.
           </p>
         </div>
       </div>
@@ -618,11 +633,15 @@ f"""
         <div class="card">
           <h3>Submission portal</h3>
           <p>
-            The official submission portal has not been published yet. Please check back, or refer to the
-            Call for Papers PDF.
+            Papers are submitted through <strong>IEEE RAS PaperPlaza</strong>. Select
+            <strong>ISR-SIAS 2026</strong> from the conference list on the PaperPlaza page.
           </p>
           <p>
-            <span class="btn btn-primary" aria-disabled="true" role="link">Submission system &mdash; TBA</span>
+            <a class="btn btn-primary btn-lg btn-block"
+               href="{SUBMIT_URL}"
+               target="_blank" rel="noopener noreferrer">
+              Submit Your Paper &rarr;
+            </a>
           </p>
           <p>
             <a class="btn btn-blue" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">
@@ -707,8 +726,9 @@ f"""
         <details>
           <summary>Where do I submit my paper?</summary>
           <p>
-            The online submission system will be announced on this page. Please check back before the
-            August 28, 2026 deadline.
+            Through <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>,
+            selecting <strong>ISR-SIAS 2026</strong> from the conference list. Submissions close on
+            August 28, 2026.
           </p>
         </details>
 
@@ -1069,60 +1089,20 @@ f"""
 
     <section class="section">
       <!--
-        WEB CHAIR NOTE: replace the placeholder address below with the real
-        conference contact address before launch. It appears once here only.
+        WEB CHAIR NOTE: one address covers every kind of enquiry. If separate
+        addresses are created later, this is the only block to change.
       -->
-      <div class="notice-box">
-        <div class="notice-icon" aria-hidden="true">!</div>
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>Contact address to be confirmed.</strong>
+          <strong>All enquiries go to the conference mailing list.</strong>
           <p>
-            The official conference e-mail address will be published here shortly. In the meantime,
-            enquiries can be directed through the
-            <a href="{AIST_URL}" target="_blank" rel="noopener noreferrer">official conference gateway</a>.
+            Questions about the conference, registration, paper submission, the review process,
+            or this website should all be sent to
+            <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.
+            Please state the subject of your enquiry. Messages are handled by the organizing committee.
           </p>
         </div>
-      </div>
-
-      <div class="grid-3">
-        <article class="card">
-          <h3>General enquiries</h3>
-          <p>Questions about the conference, venue, and registration.</p>
-          <p><strong>E-mail:</strong> to be announced</p>
-        </article>
-
-        <article class="card">
-          <h3>Paper submission</h3>
-          <p>Questions about manuscripts, the review process, and the program.</p>
-          <p><strong>E-mail:</strong> to be announced</p>
-        </article>
-
-        <article class="card">
-          <h3>Website</h3>
-          <p>Broken links, missing information, or corrections to this site.</p>
-          <p><strong>E-mail:</strong> to be announced</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <span class="kicker">Official links</span>
-        <h2>Where to Find Us</h2>
-      </div>
-
-      <div class="grid-2">
-        <article class="card">
-          <h3>Conference website</h3>
-          <p><a href="{SITE_URL}">{SITE_URL}</a></p>
-          <p>This site holds the full conference information.</p>
-        </article>
-
-        <article class="card">
-          <h3>Official gateway (AIST)</h3>
-          <p><a href="{AIST_URL}" target="_blank" rel="noopener noreferrer">{AIST_URL}</a></p>
-          <p>The gateway page hosted by the General Chair's institution links here.</p>
-        </article>
       </div>
     </section>
 

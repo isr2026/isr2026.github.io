@@ -63,18 +63,25 @@ python3 _tools/build.py
 
 `_tools/build.py` regenerates every page from a single template. It **overwrites** all ten HTML files, so if you have hand-edited a page, put the change into `build.py` first or your edit will be lost. Using it is optional — if you prefer to hand-edit, just delete `_tools/`.
 
+As of 2026-08-06 the generator is in sync: running it reproduces all ten committed pages byte-for-byte. Verify that after any hand-edit, so the generator never silently reverts published content:
+
+```bash
+cp -R . /tmp/buildcheck && (cd /tmp/buildcheck && python3 _tools/build.py) && diff -rq --exclude=.git --exclude=_tools . /tmp/buildcheck
+```
+
 ## Blockers — confirm with the General Chair before publishing
 
 1. **The extended deadlines are not on the live AIST site.** As of this writing, <https://unit.aist.go.jp/ircwb/isrsias2026> still shows the *original* dates (submission Aug 1, notification Sep 30, camera-ready Oct 13). The extended dates (Aug 28 / Oct 18 / Nov 2) appear only in the local `index.html` draft and in the CFP PDF. This site uses the **extended** dates throughout. Confirm the extension is official before publishing, or the two sites will contradict each other in public.
 2. **The CFP PDF is internally inconsistent.** The file is named `ISRSIAS2026_cfp_2st.pdf` but its heading reads "1st Call for Papers", while its content carries the extended dates. Ask for a corrected PDF; it is linked from four places on this site.
-3. **Submission system is unresolved.** `index.html` said PaperPlaza was "coming soon"; `submission.html` linked to the *generic* PaperCept entry page, which is not conference-specific and would strand authors. This site says "to be announced" and disables the button. Get the real conference URL from the Program Chair.
+3. **Submission link is the generic PaperPlaza page.** Submissions opened 2026-08-06 and the button is live, but it points at `https://ras.papercept.net/conferences/scripts/start.pl` — the generic IEEE RAS entry page listing every open RAS conference. ISR-SIAS 2026 is on that list and is accepting submissions, so the link works, but authors must find the conference themselves; both the button caption and the FAQ tell them to. Ask the Program Chair for the conference-specific PaperPlaza URL and replace the two `href`s, both in `submission.html` (the portal button and the "Where do I submit?" FAQ answer).
+   - **Deadline mismatch:** the PaperPlaza listing shows a submission deadline of **August 20, 2026**, while this site says **August 28** everywhere. One of the two is wrong and authors will see both. Resolve with the Program Chair.
 4. **IEEE logo is hot-linked from Wikimedia Commons** (inherited from the original site, in every page footer). Wikimedia discourages hotlinking, and IEEE has its own trademark usage rules for conference sites. Request the official IEEE master brand file and host it locally in `assets/img/`.
 
 ## Before launch — placeholders to replace
 
 Search the repo for `TBA` and `to be announced`. The items below need real content:
 
-- [ ] **Contact e-mail addresses** (`contact.html`) — currently "to be announced" in three places. A conference site with no contact address is the single most common complaint from authors.
+- [x] **Contact e-mail addresses** (`contact.html`) — done 2026-08-06. One address, `M-isrsias2026-info-ml@aist.go.jp`, covers every enquiry type. A separate website address was offered by the General Chair's office but declined in favour of one shared list, so the three per-topic cards were removed as duplicates.
 - [ ] **Registration fees and categories** (`registration.html`)
 - [ ] **Hotel list** (`accommodation.html`)
 - [ ] **Program** (`program.html`) — after October 18 notification
