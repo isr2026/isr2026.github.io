@@ -3,6 +3,13 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-08-07
+
+- **Home:** Reordered the "Latest Announcements" list to newest-first. The
+  "Paper submission is now open" item (August 6) now sits at the top, above the
+  two July 31 items (important dates, then Call for Papers). Applied in both
+  `index.html` and the `_tools/build.py` template so they stay in sync.
+
 ## 2026-08-06
 
 - **Submission open:** The submission system button on `submission.html` now links
