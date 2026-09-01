@@ -159,7 +159,7 @@ f"""
 
       <aside class="hero-card" aria-labelledby="next-deadline">
         <div class="status-label">Next deadline</div>
-        <h2 id="next-deadline">August 28, 2026</h2>
+        <h2 id="next-deadline">September 5, 2026</h2>
         <p>Paper submission deadline &mdash; extended from August 1, 2026.</p>
         <p style="margin-bottom:0;">
           Initial submissions are 2&ndash;4 page extended abstracts.
@@ -179,6 +179,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-09-01">
+            <span class="announcement-date">September 1, 2026</span>
+            <a href="dates.html">
+              Paper submission deadline extended to September 5, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-08-06">
             <span class="announcement-date">August 6, 2026</span>
             <a href="submission.html">
@@ -262,7 +269,7 @@ f"""
       <div class="grid-4">
         <article class="card date-card highlight">
           <div class="label">Paper Submission</div>
-          <div class="date"><span class="date-old">Aug 1, 2026</span><br /><span class="date-new">August 28, 2026</span></div>
+          <div class="date"><span class="date-old">Aug 1, 2026</span><br /><span class="date-new">September 5, 2026</span></div>
         </article>
         <article class="card date-card">
           <div class="label">Notification</div>
@@ -282,7 +289,7 @@ f"""
     <section class="footer-cta">
       <div>
         <h2>Call for Papers is open</h2>
-        <p>Prepare a 2&ndash;4 page extended abstract by August 28, 2026.</p>
+        <p>Prepare a 2&ndash;4 page extended abstract by September 5, 2026.</p>
       </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="submission.html">Submission Guide</a>
@@ -441,7 +448,7 @@ f"""
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>The paper submission deadline has been extended to August 28, 2026.</strong>
+          <strong>The paper submission deadline has been extended to September 5, 2026.</strong>
           <p>
             Notification and camera-ready deadlines have moved accordingly. Please check this page for the
             latest schedule; the <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
@@ -472,7 +479,7 @@ f"""
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">August 1, 2026</span><br /><span class="date-new">August 28, 2026</span></td>
+              <td><span class="date-old">August 1, 2026</span><br /><span class="date-new">September 5, 2026</span></td>
               <td>Deadline for paper submission (2&ndash;4 page extended abstract)</td>
               <td>Extended</td>
             </tr>
@@ -621,7 +628,7 @@ f"""
           <strong>The online submission system is now open.</strong>
           <p>
             Submit your manuscript through IEEE RAS PaperPlaza before the
-            <strong>August 28, 2026</strong> deadline. On the PaperPlaza page, select
+            <strong>September 5, 2026</strong> deadline. On the PaperPlaza page, select
             <strong>ISR-SIAS 2026</strong> from the list of conferences.
           </p>
         </div>
@@ -714,7 +721,7 @@ f"""
 
       <div class="publication-flow">
         <div class="flow-item"><strong>Prepare</strong><span>Extended abstract, IEEE format</span></div>
-        <div class="flow-item"><strong>Submit</strong><span>By August 28, 2026</span></div>
+        <div class="flow-item"><strong>Submit</strong><span>By September 5, 2026</span></div>
         <div class="flow-item"><strong>Review</strong><span>Peer review</span></div>
         <div class="flow-item"><strong>Notification</strong><span>October 18, 2026</span></div>
         <div class="flow-item"><strong>Camera-ready</strong><span>November 2, 2026</span></div>
@@ -745,7 +752,7 @@ f"""
           <p>
             Through <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>,
             selecting <strong>ISR-SIAS 2026</strong> from the conference list. Submissions close on
-            August 28, 2026.
+            September 5, 2026.
           </p>
         </details>
 

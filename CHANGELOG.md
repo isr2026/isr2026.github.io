@@ -3,6 +3,14 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-09-01
+
+- **Deadline extended to September 5, 2026.** Updated every operative mention of
+  the paper submission deadline (home hero, key dates, CFP line, dates page,
+  submission page) from August 28 to September 5. Added a new dated announcement
+  at the top of the home page; the historical July 31 announcement is left as-is.
+  HP-only change — PaperPlaza already accepts submissions until September 5.
+
 ## 2026-08-07
 
 
