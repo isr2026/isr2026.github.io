@@ -5,6 +5,8 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
 
 ## 2026-09-01
 
+- **Home hero:** Corrected the deadline subtitle to "extended from August 28,
+  2026" (the deadline authors were working to), instead of August 1.
 - **Deadline extended to September 5, 2026.** Updated every operative mention of
   the paper submission deadline (home hero, key dates, CFP line, dates page,
   submission page) from August 28 to September 5. Added a new dated announcement
