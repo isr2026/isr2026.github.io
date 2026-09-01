@@ -269,7 +269,7 @@ f"""
       <div class="grid-4">
         <article class="card date-card highlight">
           <div class="label">Paper Submission</div>
-          <div class="date"><span class="date-old">Aug 1, 2026</span><br /><span class="date-new">September 5, 2026</span></div>
+          <div class="date"><span class="date-old">Aug 28, 2026</span><br /><span class="date-new">September 5, 2026</span></div>
         </article>
         <article class="card date-card">
           <div class="label">Notification</div>
@@ -479,7 +479,7 @@ f"""
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">August 1, 2026</span><br /><span class="date-new">September 5, 2026</span></td>
+              <td><span class="date-old">August 28, 2026</span><br /><span class="date-new">September 5, 2026</span></td>
               <td>Deadline for paper submission (2&ndash;4 page extended abstract)</td>
               <td>Extended</td>
             </tr>

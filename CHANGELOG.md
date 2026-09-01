@@ -5,6 +5,9 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
 
 ## 2026-09-01
 
+- **Key dates strike-through:** Changed the previous-deadline (struck-out) date
+  on the home Key Deadlines card and the Important Dates table from August 1 to
+  August 28, to match the corrected hero subtitle.
 - **Home hero:** Corrected the deadline subtitle to "extended from August 28,
   2026" (the deadline authors were working to), instead of August 1.
 - **Deadline extended to September 5, 2026.** Updated every operative mention of
