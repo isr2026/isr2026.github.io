@@ -3,6 +3,28 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-09-29
+
+- **Submission closed.** The site had been telling authors that submission was
+  open for 24 days after the September 5 deadline passed, with a live "Submit
+  Your Paper" button. `submission.html` now states that submission is closed and
+  papers are under review; the PaperPlaza link is kept, relabelled "Open IEEE
+  RAS PaperPlaza", so authors can still sign in and view their own submission.
+  The "Where do I submit my paper?" FAQ became "Can I still submit a paper?".
+- **Important Dates:** The page notice no longer announces the extension to
+  September 5; it now states that submission is closed and gives the next two
+  milestones. The paper-submission row's status changed from "Extended" to
+  "Closed" and its struck-out August 28 date was dropped, the extension history
+  having stopped being useful once the deadline passed.
+- **Home page:** Hero card switched from "Next deadline — September 5" to
+  "Next milestone — October 18, 2026" (notification of acceptance). The
+  highlight on the Key Deadlines row moved from Paper Submission to
+  Notification. The closing call to action changed from "Call for Papers is
+  open" to "Papers are under review". Added a September 5 announcement that
+  submission has closed.
+- **`_tools/build.py`** updated in step; all ten pages verified to regenerate
+  byte-identical.
+
 ## 2026-09-01
 
 - **Key dates strike-through:** Changed the previous-deadline (struck-out) date

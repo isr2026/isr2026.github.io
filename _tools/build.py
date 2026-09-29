@@ -158,11 +158,11 @@ f"""
       </div>
 
       <aside class="hero-card" aria-labelledby="next-deadline">
-        <div class="status-label">Next deadline</div>
-        <h2 id="next-deadline">September 5, 2026</h2>
-        <p>Paper submission deadline &mdash; extended from August 28, 2026.</p>
+        <div class="status-label">Next milestone</div>
+        <h2 id="next-deadline">October 18, 2026</h2>
+        <p>Notification of paper acceptance. Submission closed on September 5, 2026.</p>
         <p style="margin-bottom:0;">
-          Initial submissions are 2&ndash;4 page extended abstracts.
+          Camera-ready final papers are due November 2, 2026.
           <a href="dates.html">See all dates</a>
         </p>
       </aside>
@@ -179,6 +179,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-09-05">
+            <span class="announcement-date">September 5, 2026</span>
+            <a href="submission.html">
+              Paper submission is now closed &mdash; notification of acceptance by October 18, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-09-01">
             <span class="announcement-date">September 1, 2026</span>
             <a href="dates.html">
@@ -267,11 +274,11 @@ f"""
       </div>
 
       <div class="grid-4">
-        <article class="card date-card highlight">
-          <div class="label">Paper Submission</div>
-          <div class="date"><span class="date-old">Aug 28, 2026</span><br /><span class="date-new">September 5, 2026</span></div>
-        </article>
         <article class="card date-card">
+          <div class="label">Paper Submission</div>
+          <div class="date">September 5, 2026</div>
+        </article>
+        <article class="card date-card highlight">
           <div class="label">Notification</div>
           <div class="date">October 18, 2026</div>
         </article>
@@ -288,8 +295,8 @@ f"""
 
     <section class="footer-cta">
       <div>
-        <h2>Call for Papers is open</h2>
-        <p>Prepare a 2&ndash;4 page extended abstract by September 5, 2026.</p>
+        <h2>Papers are under review</h2>
+        <p>Submission closed September 5, 2026. Authors will be notified by October 18, 2026.</p>
       </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="submission.html">Submission Guide</a>
@@ -445,13 +452,15 @@ f"""
   <main id="main">
 
     <section class="section">
-      <div class="notice-box">
-        <div class="notice-icon" aria-hidden="true">!</div>
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>The paper submission deadline has been extended to September 5, 2026.</strong>
+          <strong>Paper submission closed on September 5, 2026.</strong>
           <p>
-            Notification and camera-ready deadlines have moved accordingly. Please check this page for the
-            latest schedule; the <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
+            Papers are under peer review. The next milestone is notification of acceptance on
+            <strong>October 18, 2026</strong>, followed by camera-ready final papers on
+            <strong>November 2, 2026</strong>. The
+            <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
             is the official reference document.
           </p>
         </div>
@@ -479,9 +488,9 @@ f"""
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">August 28, 2026</span><br /><span class="date-new">September 5, 2026</span></td>
+              <td>September 5, 2026</td>
               <td>Deadline for paper submission (2&ndash;4 page extended abstract)</td>
-              <td>Extended</td>
+              <td>Closed</td>
             </tr>
             <tr>
               <td><span class="date-old">September 30, 2026</span><br /><span class="date-new">October 18, 2026</span></td>
@@ -614,22 +623,24 @@ f"""
       <!--
         ==========================================================================
         WEB CHAIR NOTE - submission system
-        Opened August 6, 2026. SUBMIT_URL is the GENERIC IEEE RAS PaperPlaza
-        entry page, which lists every open RAS conference; authors must select
-        "ISR-SIAS 2026" themselves. If the Program Chair supplies the
-        conference-specific PaperPlaza URL, change SUBMIT_URL at the top of this
-        file and delete the "select ISR-SIAS 2026" wording in the two places
-        below.
+        Opened August 6, 2026; closed September 5, 2026. SUBMIT_URL is the
+        GENERIC IEEE RAS PaperPlaza entry page, which lists every open RAS
+        conference. The link is kept so authors can sign in and view their own
+        submission; it is no longer presented as a call to action.
+        Next milestone: notification of acceptance, October 18, 2026. When
+        results go out, update this notice, the FAQ answer below, the hero card
+        and key-date cards on index.html, and the status column in dates.html.
         ==========================================================================
       -->
-      <div class="notice-box success">
-        <div class="notice-icon" aria-hidden="true">&#10003;</div>
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>The online submission system is now open.</strong>
+          <strong>Paper submission is closed.</strong>
           <p>
-            Submit your manuscript through IEEE RAS PaperPlaza before the
-            <strong>September 5, 2026</strong> deadline. On the PaperPlaza page, select
-            <strong>ISR-SIAS 2026</strong> from the list of conferences.
+            The submission deadline was <strong>September 5, 2026</strong>. Papers are now under
+            peer review, and authors will be notified of the outcome by
+            <strong>October 18, 2026</strong>. Camera-ready final papers are due
+            <strong>November 2, 2026</strong>.
           </p>
         </div>
       </div>
@@ -657,18 +668,19 @@ f"""
         <div class="card">
           <h3>Submission portal</h3>
           <p>
-            Papers are submitted through <strong>IEEE RAS PaperPlaza</strong>. Select
-            <strong>ISR-SIAS 2026</strong> from the conference list on the PaperPlaza page.
+            Submission through <strong>IEEE RAS PaperPlaza</strong> closed on
+            <strong>September 5, 2026</strong>. Authors can still sign in to PaperPlaza to view
+            their own submission; select <strong>ISR-SIAS 2026</strong> from the conference list.
           </p>
           <p>
-            <a class="btn btn-primary btn-lg btn-block"
+            <a class="btn btn-blue btn-block"
                href="{SUBMIT_URL}"
                target="_blank" rel="noopener noreferrer">
-              Submit Your Paper &rarr;
+              Open IEEE RAS PaperPlaza
             </a>
           </p>
           <p>
-            <a class="btn btn-blue" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-blue btn-block" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">
               Download Call for Papers (PDF)
             </a>
           </p>
@@ -748,11 +760,11 @@ f"""
         </details>
 
         <details>
-          <summary>Where do I submit my paper?</summary>
+          <summary>Can I still submit a paper?</summary>
           <p>
-            Through <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>,
-            selecting <strong>ISR-SIAS 2026</strong> from the conference list. Submissions close on
-            September 5, 2026.
+            No. Submission closed on September 5, 2026. Papers already submitted through
+            <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>
+            are under review, with notification of acceptance by October 18, 2026.
           </p>
         </details>
 
