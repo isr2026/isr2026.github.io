@@ -614,7 +614,7 @@ f"""
 
 write("submission.html", "Submission",
       f"Paper submission guidelines and deadlines for {CONF_TITLE}.",
-hero("Paper Submission", "Submit Your Research",
+hero("Paper Submission", "Paper Submission",
      "Paper format, length requirements, and the submission process for IEEE ISR/SIAS 2026.") +
 f"""
   <main id="main">
