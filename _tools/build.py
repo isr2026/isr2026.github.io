@@ -31,10 +31,45 @@ NAV = [
     ("contact.html",      "Contact"),
 ]
 
+# Header navigation. A third element groups pages under a dropdown; the first
+# child is the parent section's own page. NAV above stays flat and drives the
+# footer, so every page is still one click away if the dropdowns never open.
+HEADER_NAV = [
+    ("index.html",        "Home",             None),
+    (None,                "About",            [("about.html",        "About the Conference"),
+                                               ("committee.html",    "Committee")]),
+    ("dates.html",        "Important Dates",  None),
+    ("registration.html", "Registration",     None),
+    (None,                "Submission",       [("submission.html",   "Paper Submission"),
+                                               ("poster.html",       "Poster Presentation")]),
+    ("program.html",      "Program",          None),
+    (None,                "Venue",            [("venue.html",        "Venue & Access"),
+                                               ("accommodation.html","Accommodation")]),
+    ("contact.html",      "Contact",          None),
+]
+
+def _nav(page):
+    out = []
+    for href, label, children in HEADER_NAV:
+        if not children:
+            cur = ' aria-current="page"' if href == page else ''
+            out.append('        <a href="%s"%s>%s</a>' % (href, cur, label))
+            continue
+        gid = "navmenu-" + label.lower().replace(" ", "-")
+        active = ' is-active' if any(h == page for h, _ in children) else ''
+        out.append('        <div class="nav-group">')
+        out.append('          <button type="button" class="nav-toggle%s" aria-expanded="false" aria-controls="%s">%s<span class="nav-caret" aria-hidden="true"></span></button>'
+                   % (active, gid, label))
+        out.append('          <div class="nav-menu" id="%s">' % gid)
+        for h, l in children:
+            cur = ' aria-current="page"' if h == page else ''
+            out.append('            <a href="%s"%s>%s</a>' % (h, cur, l))
+        out.append('          </div>')
+        out.append('        </div>')
+    return "\n".join(out)
+
 def head(page, title, desc):
-    nav = "\n".join(
-        '        <a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h == page else '', l)
-        for h, l in NAV)
+    nav = _nav(page)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,6 +136,49 @@ def foot():
       </p>
     </div>
   </footer>
+
+  <script>
+    // Header dropdowns. Without this the menus still open on hover and on
+    // keyboard focus (CSS), and every page is reachable from the footer.
+    (function () {{
+      var groups = [].slice.call(document.querySelectorAll('.nav-group'));
+      if (!groups.length) return;
+
+      function close(g) {{
+        g.removeAttribute('data-open');
+        var b = g.querySelector('.nav-toggle');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      }}
+      function closeAll(except) {{
+        groups.forEach(function (g) {{ if (g !== except) close(g); }});
+      }}
+
+      groups.forEach(function (g) {{
+        var btn = g.querySelector('.nav-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {{
+          var open = g.getAttribute('data-open') === 'true';
+          closeAll(g);
+          if (open) {{
+            close(g);
+          }} else {{
+            g.setAttribute('data-open', 'true');
+            btn.setAttribute('aria-expanded', 'true');
+          }}
+        }});
+        g.addEventListener('keydown', function (e) {{
+          if (e.key === 'Escape' && g.getAttribute('data-open') === 'true') {{
+            close(g);
+            btn.focus();
+          }}
+        }});
+      }});
+
+      document.addEventListener('click', function (e) {{
+        if (!e.target.closest('.nav-group')) closeAll(null);
+      }});
+    }})();
+  </script>
 </body>
 </html>
 """
@@ -151,7 +229,8 @@ f"""
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="submission.html">Submission Information</a>
+          <a class="btn btn-primary" href="poster.html">Submit a Poster &rarr;</a>
+          <a class="btn btn-outline" href="submission.html">Submission Information</a>
           <a class="btn btn-outline" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">
             Call for Papers (PDF)
           </a>
@@ -162,6 +241,7 @@ f"""
         <div class="status-label">Next milestone</div>
         <h2 id="next-deadline">October 18, 2026</h2>
         <p>Notification of paper acceptance. Submission closed on September 5, 2026.</p>
+        <p><strong><a href="poster.html">Poster abstracts</a> are open until October 25, 2026.</strong></p>
         <p style="margin-bottom:0;">
           Camera-ready final papers are due November 2, 2026.
           <a href="dates.html">See all dates</a>
@@ -180,6 +260,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-03">
+            <span class="announcement-date">October 3, 2026</span>
+            <a href="poster.html">
+              Poster presentations &mdash; abstract submission is open until October 25, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-09-05">
             <span class="announcement-date">September 5, 2026</span>
             <a href="submission.html">
@@ -822,16 +909,12 @@ f"""
         - A0, one sheet. Already agreed with INTEX Osaka.
         - Abstract book carries poster number, title and authors only.
 
-      NO FILE UPLOAD. The one-page PDF discussed earlier in the thread is not
-      required. The General Chair's phrase "the system does not handle poster
-      data" refers to that PDF; the physical A0 poster is printed by the author
-      and brought to the venue, as is normal for a poster session. Only the
-      abstract is submitted, typed into the PaperPlaza form.
-
-      Not verified by opening the live submission form, to avoid leaving a
-      stray record in the real conference system. If an author reports a file
-      upload field on the Poster Paper type, correct the "What to submit"
-      section and the FAQ answer about uploading.
+      TWO ITEMS ARE SUBMITTED: the abstract, typed into the PaperPlaza form
+      (2,000 character limit), and a one-page PDF carrying the abstract and one
+      representative figure. Confirmed by the Website Chair 2026-10-03.
+      The General Chair's phrase "the system does not handle poster data"
+      refers to the A0 poster itself, which the author prints and brings to the
+      venue; it does not exempt the one-page PDF.
       ==========================================================================
     -->
 
@@ -865,7 +948,7 @@ f"""
         <p>
           Poster contributions are <strong>not peer-reviewed</strong>. Submitted titles, authors and
           abstracts are checked for scope and suitability only. Authors bring and mount their own
-          poster at the venue; nothing is uploaded to the submission system.
+          poster at the venue; the A0 poster itself is never uploaded.
         </p>
         <p>
           Authors whose regular paper is not accepted will be invited to present their work as a
@@ -881,27 +964,41 @@ f"""
         <h2>Submission Requirements</h2>
       </div>
 
-      <div class="card">
-        <h3>A poster abstract &mdash; nothing else</h3>
-        <p>
-          There is no manuscript and no file to upload. The abstract is typed directly into the
-          PaperPlaza submission form, in English.
-        </p>
-        <ul class="info-list">
-          <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>Maximum 2,000 characters</strong> &mdash; a hard limit set by the form</span></li>
-          <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>400&ndash;500 words</strong> as a rough guide</span></li>
-          <li><span class="check" aria-hidden="true">&#10003;</span><span>Title and full author list</span></li>
-        </ul>
+      <div class="grid-2">
+        <article class="card">
+          <h3>1. Poster abstract</h3>
+          <p>
+            Typed directly into the PaperPlaza submission form, in English.
+          </p>
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>Maximum 2,000 characters</strong> &mdash; a hard limit set by the form</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>400&ndash;500 words</strong> as a rough guide</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Title and full author list</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>2. One-page PDF</h3>
+          <p>
+            Uploaded with the submission: a single page carrying the abstract and one figure.
+          </p>
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>About one page</strong>, free format</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>One representative figure</strong> or diagram</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>PDF only</span></li>
+          </ul>
+        </article>
       </div>
 
       <div class="notice-box info" style="margin-top: 24px;">
         <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>No template, no manuscript, no PDF.</strong>
+          <strong>No IEEE template is required.</strong>
           <p>
-            Poster submissions do not follow the IEEE conference format and do not involve a paper.
-            You submit an abstract now, then print your A0 poster yourself and bring it to the venue.
-            Posters are not published in IEEE Xplore.
+            The one-page PDF is free format &mdash; it is read to check the content of your
+            contribution, not typeset for publication, so it does not have to follow the IEEE
+            conference paper format. Your A0 poster is a separate thing: print it yourself and bring
+            it to the venue. Posters are not published in IEEE Xplore.
           </p>
         </div>
       </div>
@@ -1007,7 +1104,7 @@ f"""
 
         <article class="card">
           <h3>Bring your own poster</h3>
-          <p>Nothing is uploaded or printed for you. Print your poster in advance and bring it with you.</p>
+          <p>The A0 poster is not uploaded and not printed for you. Print it in advance and bring it with you.</p>
         </article>
 
         <article class="card">
@@ -1072,10 +1169,10 @@ f"""
         </details>
 
         <details>
-          <summary>Do I need to upload a PDF or a poster file?</summary>
+          <summary>Do I upload my A0 poster to the submission system?</summary>
           <p>
-            No. Nothing is uploaded. You type your abstract into the PaperPlaza form, and that is the
-            whole submission. Print your A0 poster yourself and bring it to INTEX Osaka.
+            No. You upload a one-page PDF with your abstract and one figure. The A0 poster itself is
+            never uploaded &mdash; print it yourself and bring it to INTEX Osaka.
           </p>
         </details>
 

@@ -30,15 +30,30 @@
 
       <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <div class="nav-group">
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="navmenu-about">About<span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="nav-menu" id="navmenu-about">
+            <a href="about.html">About the Conference</a>
+            <a href="committee.html">Committee</a>
+          </div>
+        </div>
         <a href="dates.html">Important Dates</a>
         <a href="registration.html" aria-current="page">Registration</a>
-        <a href="submission.html">Submission</a>
-        <a href="poster.html">Poster</a>
+        <div class="nav-group">
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="navmenu-submission">Submission<span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="nav-menu" id="navmenu-submission">
+            <a href="submission.html">Paper Submission</a>
+            <a href="poster.html">Poster Presentation</a>
+          </div>
+        </div>
         <a href="program.html">Program</a>
-        <a href="venue.html">Venue</a>
-        <a href="accommodation.html">Accommodation</a>
-        <a href="committee.html">Committee</a>
+        <div class="nav-group">
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="navmenu-venue">Venue<span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="nav-menu" id="navmenu-venue">
+            <a href="venue.html">Venue & Access</a>
+            <a href="accommodation.html">Accommodation</a>
+          </div>
+        </div>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -167,5 +182,48 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    // Header dropdowns. Without this the menus still open on hover and on
+    // keyboard focus (CSS), and every page is reachable from the footer.
+    (function () {
+      var groups = [].slice.call(document.querySelectorAll('.nav-group'));
+      if (!groups.length) return;
+
+      function close(g) {
+        g.removeAttribute('data-open');
+        var b = g.querySelector('.nav-toggle');
+        if (b) b.setAttribute('aria-expanded', 'false');
+      }
+      function closeAll(except) {
+        groups.forEach(function (g) { if (g !== except) close(g); });
+      }
+
+      groups.forEach(function (g) {
+        var btn = g.querySelector('.nav-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var open = g.getAttribute('data-open') === 'true';
+          closeAll(g);
+          if (open) {
+            close(g);
+          } else {
+            g.setAttribute('data-open', 'true');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+        g.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && g.getAttribute('data-open') === 'true') {
+            close(g);
+            btn.focus();
+          }
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.nav-group')) closeAll(null);
+      });
+    })();
+  </script>
 </body>
 </html>

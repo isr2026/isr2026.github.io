@@ -3,6 +3,35 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-03 (later)
+
+- **Navigation regrouped into dropdowns.** Eleven top-level links needed 1155px
+  of header against a 1180px container — one line on a wide desktop with 25px
+  to spare, and wrapped to two lines on anything narrower. Now eight: Committee
+  sits under About, Poster under Submission, Accommodation under Venue. The
+  header needs 937px. Important Dates deliberately stayed top-level; it is one
+  of the most-visited pages on a conference site and does not belong behind
+  About.
+  - The footer keeps all eleven links flat, so every page is one click away.
+  - Below 980px, where the header already stacks, the dropdowns flatten back
+    into a plain inline list and the toggles disappear. No JavaScript is needed
+    at that width.
+  - On wider screens the menus open on hover, on keyboard focus, and on click.
+    The click handler adds Escape-to-close and click-outside-to-close. With
+    JavaScript off, hover and focus still work, and the footer is the backstop.
+  - Removed two dead rules, `.nav-toggle` and `.nav-toggle-label`, left over
+    from a mobile menu that was never built. The first collided with the new
+    toggle button.
+- **Poster submission needs a one-page PDF after all.** An earlier reading of
+  the General Chair's reply took "the system does not handle poster data" to
+  mean no upload at all. It refers to the A0 poster. Authors submit both the
+  abstract (2,000 characters, in the form) and a one-page PDF carrying the
+  abstract and one representative figure.
+- **Home page** now leads with the poster deadline: "Submit a Poster" is the
+  primary call to action, the hero card carries the October 25 date, and a
+  dated announcement was added. Paper submission has closed, so the poster is
+  the only thing authors can still act on.
+
 ## 2026-10-03
 
 - **Poster presentation page added** (`poster.html`), linked from the navigation
