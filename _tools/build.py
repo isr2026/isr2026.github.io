@@ -23,6 +23,7 @@ NAV = [
     ("dates.html",        "Important Dates"),
     ("registration.html", "Registration"),
     ("submission.html",   "Submission"),
+    ("poster.html",       "Poster"),
     ("program.html",      "Program"),
     ("venue.html",        "Venue"),
     ("accommodation.html","Accommodation"),
@@ -447,7 +448,7 @@ f"""
 write("dates.html", "Important Dates",
       f"Deadlines and key dates for {CONF_TITLE}.",
 hero("Important Dates", "Important Dates",
-     "All deadlines are at 23:59 Anywhere on Earth (AoE) unless stated otherwise.") +
+     "Submission deadlines close at 23:59:59 Pacific Time, as enforced by PaperPlaza.") +
 f"""
   <main id="main">
 
@@ -496,6 +497,11 @@ f"""
               <td><span class="date-old">September 30, 2026</span><br /><span class="date-new">October 18, 2026</span></td>
               <td>Notification of paper acceptance</td>
               <td>Updated</td>
+            </tr>
+            <tr>
+              <td>October 25, 2026</td>
+              <td>Deadline for <a href="poster.html">poster abstract</a> submission</td>
+              <td>Open</td>
             </tr>
             <tr>
               <td><span class="date-old">October 13, 2026</span><br /><span class="date-new">November 2, 2026</span></td>
@@ -787,6 +793,321 @@ f"""
 """)
 
 # ---------------------------------------------------------------- Program
+
+write("poster.html", "Poster Presentation",
+      f"Poster presentation submission and presentation details for {CONF_TITLE}.",
+hero("Poster Presentation", "Poster Presentation",
+     "Submit a short abstract through PaperPlaza and present your work on an A0 poster board in Osaka.") +
+f"""
+  <main id="main">
+
+    <!--
+      ==========================================================================
+      WEB CHAIR NOTE - poster page
+      Content confirmed by the General Chair (Tanigawa) on 2026-10-03, and
+      checked against the live PaperPlaza entry for ISR-SIAS 2026 (ConfID 586)
+      on the same day. PaperPlaza shows the "Poster Paper" track as open:
+      opened 2026-09-22, closes 2026-10-25, deadlines 23:59:59 Pacific Time.
+
+      CONFIRMED by the General Chair:
+        - Submission goes through PaperPlaza, same as regular papers. A poster
+          track already exists there; the website only needs to link to it.
+        - Abstract limit is 2,000 characters. That is the hard limit of the
+          PaperPlaza form. 400-500 words is only a rough guide.
+        - No peer review. Titles, authors and abstracts are checked for sanity
+          only.
+        - Authors of regular papers that are not accepted (IEEE asked for a
+          70-80% acceptance rate) will be offered a poster slot.
+        - Registration fee is identical to oral presentation. No new category.
+        - A0, one sheet. Already agreed with INTEX Osaka.
+        - Abstract book carries poster number, title and authors only.
+
+      NO FILE UPLOAD. The one-page PDF discussed earlier in the thread is not
+      required. The General Chair's phrase "the system does not handle poster
+      data" refers to that PDF; the physical A0 poster is printed by the author
+      and brought to the venue, as is normal for a poster session. Only the
+      abstract is submitted, typed into the PaperPlaza form.
+
+      Not verified by opening the live submission form, to avoid leaving a
+      stray record in the real conference system. If an author reports a file
+      upload field on the Poster Paper type, correct the "What to submit"
+      section and the FAQ answer about uploading.
+      ==========================================================================
+    -->
+
+    <section class="section">
+      <div class="notice-box success">
+        <div class="notice-icon" aria-hidden="true">&#10003;</div>
+        <div>
+          <strong>Poster submission is open.</strong>
+          <p>
+            Submit through IEEE RAS PaperPlaza by <strong>October 25, 2026</strong>
+            (23:59:59 Pacific Time). On the PaperPlaza page, select
+            <strong>ISR-SIAS 2026</strong>, then choose <strong>Poster Paper</strong> from the list
+            of submission types.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Overview</span>
+        <h2>About the Poster Session</h2>
+      </div>
+
+      <div class="prose">
+        <p>
+          The poster session is for <strong>presentation and discussion</strong> rather than archival
+          publication. It gives researchers a way to share work in progress, late-breaking results
+          and industrial case studies, and to talk them through face to face with an audience in Osaka.
+        </p>
+        <p>
+          Poster contributions are <strong>not peer-reviewed</strong>. Submitted titles, authors and
+          abstracts are checked for scope and suitability only. Authors bring and mount their own
+          poster at the venue; nothing is uploaded to the submission system.
+        </p>
+        <p>
+          Authors whose regular paper is not accepted will be invited to present their work as a
+          poster instead. If that applies to you, your title and author list are already on file and
+          you do not need to submit again &mdash; you will be contacted directly.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">What to submit</span>
+        <h2>Submission Requirements</h2>
+      </div>
+
+      <div class="card">
+        <h3>A poster abstract &mdash; nothing else</h3>
+        <p>
+          There is no manuscript and no file to upload. The abstract is typed directly into the
+          PaperPlaza submission form, in English.
+        </p>
+        <ul class="info-list">
+          <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>Maximum 2,000 characters</strong> &mdash; a hard limit set by the form</span></li>
+          <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>400&ndash;500 words</strong> as a rough guide</span></li>
+          <li><span class="check" aria-hidden="true">&#10003;</span><span>Title and full author list</span></li>
+        </ul>
+      </div>
+
+      <div class="notice-box info" style="margin-top: 24px;">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div>
+          <strong>No template, no manuscript, no PDF.</strong>
+          <p>
+            Poster submissions do not follow the IEEE conference format and do not involve a paper.
+            You submit an abstract now, then print your A0 poster yourself and bring it to the venue.
+            Posters are not published in IEEE Xplore.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">How to submit</span>
+        <h2>Submission Portal</h2>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <div class="card">
+            <h3>Step by step</h3>
+            <ul class="info-list">
+              <li><span class="check" aria-hidden="true">&#10003;</span><span>Open <strong>IEEE RAS PaperPlaza</strong> using the button</span></li>
+              <li><span class="check" aria-hidden="true">&#10003;</span><span>Find <strong>ISR-SIAS 2026</strong> in the conference list</span></li>
+              <li><span class="check" aria-hidden="true">&#10003;</span><span>Follow <strong>Submit a contribution to ISR-SIAS 2026</strong></span></li>
+              <li><span class="check" aria-hidden="true">&#10003;</span><span>Choose the <strong>Poster Paper</strong> submission type</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Submit your poster abstract</h3>
+          <p>
+            The poster track is open until <strong>October 25, 2026</strong>.
+          </p>
+          <p>
+            <a class="btn btn-primary btn-lg btn-block"
+               href="{SUBMIT_URL}"
+               target="_blank" rel="noopener noreferrer">
+              Submit Your Poster &rarr;
+            </a>
+          </p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            You do not need to log in to make a first submission.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Schedule</span>
+        <h2>Poster Deadlines</h2>
+      </div>
+
+      <div class="table-wrap">
+        <table class="date-table">
+          <caption>Poster schedule for IEEE ISR/SIAS 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Milestone</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>September 22, 2026</td>
+              <td>Poster submission opens on PaperPlaza</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>October 25, 2026</td>
+              <td>Deadline for poster abstract submission</td>
+              <td>Open</td>
+            </tr>
+            <tr>
+              <td>December 2&ndash;4, 2026</td>
+              <td>Poster session at INTEX Osaka</td>
+              <td>Scheduled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="color: var(--muted); font-size: 14px; margin-top: 14px;">
+        All PaperPlaza deadlines are 23:59:59 Pacific Time. Posters are not peer-reviewed, so there is
+        no separate acceptance notification. See <a href="dates.html">Important Dates</a> for the
+        full-paper schedule.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">At the venue</span>
+        <h2>Presenting Your Poster</h2>
+        <p>
+          Poster boards are provided at INTEX Osaka. Presenters bring and mount their own poster and
+          stand with it during the session.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Poster size</h3>
+          <p><strong>A0, one sheet</strong> per contribution.</p>
+          <p style="color: var(--muted); font-size: 14px;">841 &times; 1189 mm. Agreed with INTEX Osaka.</p>
+        </article>
+
+        <article class="card">
+          <h3>Bring your own poster</h3>
+          <p>Nothing is uploaded or printed for you. Print your poster in advance and bring it with you.</p>
+        </article>
+
+        <article class="card">
+          <h3>Registration</h3>
+          <p>Poster presenters pay the <a href="registration.html">same registration fee</a> as oral presenters.</p>
+          <p style="color: var(--muted); font-size: 14px;">There is no poster-only category.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Publication</span>
+        <h2>Abstract Book</h2>
+      </div>
+
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div>
+          <strong>Posters are listed by number, title and authors.</strong>
+          <p>
+            The conference abstract book carries the poster number, the title and the author list for
+            each poster. Poster contributions are not peer-reviewed full papers and are
+            <strong>not submitted to IEEE Xplore</strong>. Authors who want an archival publication
+            should use the <a href="submission.html">regular paper track</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>How long should the poster abstract be?</summary>
+          <p>
+            The PaperPlaza form accepts at most 2,000 characters, and that is the real limit.
+            400&ndash;500 words is given as a rough guide, but if your text exceeds 2,000 characters
+            the form will not accept it.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are poster submissions peer-reviewed?</summary>
+          <p>
+            No. Titles, authors and abstracts are checked for scope and suitability only. There is no
+            review process and no separate acceptance notification.
+          </p>
+        </details>
+
+        <details>
+          <summary>My regular paper was not accepted. Can I present a poster?</summary>
+          <p>
+            Yes. Authors of regular papers that are not accepted are invited to present as posters.
+            Your title and author list are already on file, so you do not need to submit again; the
+            organizers will contact you.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need to upload a PDF or a poster file?</summary>
+          <p>
+            No. Nothing is uploaded. You type your abstract into the PaperPlaza form, and that is the
+            whole submission. Print your A0 poster yourself and bring it to INTEX Osaka.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will my poster be published in IEEE Xplore?</summary>
+          <p>
+            No. The conference abstract book lists the poster number, title and authors. Posters are
+            not submitted to IEEE Xplore.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is the registration fee lower for poster presenters?</summary>
+          <p>
+            No. Registration is for attending the conference, so the fee is the same whether you
+            present orally, present a poster, or do not present at all. See
+            <a href="registration.html">Registration</a>.
+          </p>
+        </details>
+
+        <details>
+          <summary>Who should I contact about poster submissions?</summary>
+          <p>
+            Write to <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>
+            and state that your enquiry concerns the poster session.
+          </p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+""")
 
 write("program.html", "Program",
       f"Technical program, keynotes, and schedule for {CONF_TITLE}.",

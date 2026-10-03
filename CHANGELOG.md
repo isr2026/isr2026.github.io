@@ -3,6 +3,24 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-03
+
+- **Poster presentation page added** (`poster.html`), linked from the navigation
+  and footer of every page. Content confirmed by the General Chair and checked
+  against the live PaperPlaza entry (ConfID 586), which shows a "Poster Paper"
+  track open from September 22 to October 25, 2026. Submission is the abstract
+  only, typed into the PaperPlaza form, maximum 2,000 characters (400-500 words
+  is a guide, not the limit). No peer review, no file upload, no IEEE Xplore.
+  A0 single sheet, agreed with INTEX Osaka. Registration fee is the same as for
+  oral presenters. The abstract book lists poster number, title and authors.
+  Authors of regular papers that are not accepted are invited to present as
+  posters and do not resubmit.
+- **Deadline time zone corrected.** Important Dates claimed "23:59 Anywhere on
+  Earth". PaperPlaza enforces 23:59:59 Pacific Time, which is about 17 hours
+  earlier, so the site had been promising authors most of an extra day. This
+  was flagged as unverified in the README from the start; PaperPlaza settles it.
+- **Important Dates** gained the October 25 poster deadline row.
+
 ## 2026-09-29
 
 - **Submission closed.** The site had been telling authors that submission was

@@ -38,6 +38,7 @@ The org name must be `isr2026` and the repo name must be `isr2026.github.io` —
 | `dates.html` | Full deadline table |
 | `registration.html` | Fees and categories (awaiting content) |
 | `submission.html` | Paper requirements, templates, FAQ |
+| `poster.html` | Poster session — abstract submission, A0 board, abstract book |
 | `program.html` | Technical program (awaiting content) |
 | `venue.html` | INTEX Osaka, access, about the city |
 | `accommodation.html` | Hotels (awaiting content) |
@@ -73,8 +74,8 @@ cp -R . /tmp/buildcheck && (cd /tmp/buildcheck && python3 _tools/build.py) && di
 
 1. **The extended deadlines are not on the live AIST site.** As of this writing, <https://unit.aist.go.jp/ircwb/isrsias2026> still shows the *original* dates (submission Aug 1, notification Sep 30, camera-ready Oct 13). The extended dates (Aug 28 / Oct 18 / Nov 2) appear only in the local `index.html` draft and in the CFP PDF. This site uses the **extended** dates throughout. Confirm the extension is official before publishing, or the two sites will contradict each other in public.
 2. **The CFP PDF is internally inconsistent.** The file is named `ISRSIAS2026_cfp_2st.pdf` but its heading reads "1st Call for Papers", while its content carries the extended dates. Ask for a corrected PDF; it is linked from four places on this site.
-3. **Submission link is the generic PaperPlaza page.** Submissions opened 2026-08-06 and the button is live, but it points at `https://ras.papercept.net/conferences/scripts/start.pl` — the generic IEEE RAS entry page listing every open RAS conference. ISR-SIAS 2026 is on that list and is accepting submissions, so the link works, but authors must find the conference themselves; both the button caption and the FAQ tell them to. Ask the Program Chair for the conference-specific PaperPlaza URL and replace the two `href`s, both in `submission.html` (the portal button and the "Where do I submit?" FAQ answer).
-   - **Deadline mismatch:** the PaperPlaza listing shows a submission deadline of **August 20, 2026**, while this site says **August 28** everywhere. One of the two is wrong and authors will see both. Resolve with the Program Chair.
+3. ~~**Submission link is the generic PaperPlaza page.**~~ **Resolved 2026-10-03 — no conference-specific URL exists.** The PaperPlaza entry page builds its links with a JavaScript `POST` to `submissionwizard.pl`, carrying a per-session `Hash` and timestamp. There is no stable deep link to hand authors, so `start.pl` is the correct thing to link, and both `submission.html` and `poster.html` tell authors to pick ISR-SIAS 2026 from the list. Stop asking the Program Chair for a direct URL.
+   - The old **August 20 deadline mismatch** is also gone: PaperPlaza now shows the regular-paper deadline as September 5, 2026, matching this site.
 4. **IEEE logo is hot-linked from Wikimedia Commons** (inherited from the original site, in every page footer). Wikimedia discourages hotlinking, and IEEE has its own trademark usage rules for conference sites. Request the official IEEE master brand file and host it locally in `assets/img/`.
 
 ## Before launch — placeholders to replace
@@ -86,7 +87,7 @@ Search the repo for `TBA` and `to be announced`. The items below need real conte
 - [ ] **Hotel list** (`accommodation.html`)
 - [ ] **Program** (`program.html`) — after October 18 notification
 - [ ] **Program Committee list** (`committee.html`)
-- [ ] **Deadline time zone** (`dates.html`) — states "23:59 Anywhere on Earth"; this was *not* in any source document. Confirm with the Program Chair or remove it.
+- [x] **Deadline time zone** (`dates.html`) — resolved 2026-10-03. It said "23:59 Anywhere on Earth", which was invented and wrong. PaperPlaza enforces **23:59:59 Pacific Time**, roughly 17 hours earlier. Corrected.
 - [ ] **Registration requirement** (`registration.html`) — says at least one author "is normally required to register". Confirm the actual policy.
 - [ ] **Indicative program structure** (`program.html`) and **registration categories** (`registration.html`) are labelled as indicative and were invented as scaffolding. Replace or delete them.
 - [ ] **Sponsor logos** — only IEEE and NECA were on the original site. Add IEEE society co-sponsors (RAS, IES) if applicable.
