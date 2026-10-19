@@ -3,6 +3,18 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-20
+
+- **Correction: notifications of acceptance have NOT been sent yet.** The
+  2026-10-19 update wrongly stated they went out on October 18. The Program
+  Chair confirmed on 2026-10-20 that they have not. Reverted every "sent"
+  claim: removed the October 18 announcement; the home closing box is back to
+  "Papers are under review"; the Notification key-date card (re-highlighted),
+  the Important Dates row and the Submission flow diagram now show October 18
+  struck out and "To be announced"; the Dates, Submission (notice and FAQ) and
+  Program notices say notifications "will be sent shortly". No new date has
+  been given yet. The poster banner, top strip and photos are unchanged.
+
 ## 2026-10-19
 
 - **Poster call made prominent** (General Chair's request: people could not
