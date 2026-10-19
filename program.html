@@ -21,6 +21,16 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <div class="site-banner" id="poster-banner">
+    <div class="site-banner-inner">
+      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 25, 2026</strong></span>
+      <a class="site-banner-link" href="poster.html">Submit a Poster &rarr;</a>
+    </div>
+  </div>
+  <script>
+    if (Date.now() > Date.parse('2026-10-26T07:00:00Z')) document.getElementById('poster-banner').hidden = true;
+  </script>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="site-logo" href="index.html" aria-label="IEEE ISR/SIAS 2026 home">
@@ -74,9 +84,9 @@
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>The program will be published after paper notification.</strong>
+          <strong>The program is being prepared.</strong>
           <p>
-            Notification of acceptance is scheduled for <strong>October 18, 2026</strong>. The detailed
+            Notifications of acceptance were sent on <strong>October 18, 2026</strong>. The detailed
             program is expected to follow in November 2026.
           </p>
         </div>

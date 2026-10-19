@@ -3,6 +3,28 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-19
+
+- **Poster call made prominent** (General Chair's request: people could not
+  find the entry point).
+  - Home hero card replaced: the small "Next milestone" box is now a large
+    Poster Session banner with a photo, the October 25 deadline, and a
+    "Submit a Poster" button.
+  - New strip above the header on every page except `poster.html`: "Call for
+    Posters - abstracts are open until October 25, 2026 / Submit a Poster". It
+    hides itself after the PaperPlaza deadline (2026-10-26 07:00 UTC = Oct 25
+    23:59:59 PDT). The home banner card does not auto-expire; replace it after
+    October 25.
+  - `poster.html`: new "What the Poster Session Looks Like" section with two
+    photos (`assets/img/poster-session-1.jpg`, `-2.jpg`). Faces blurred before
+    publishing; captions deliberately do not name the events.
+- **Notifications of acceptance sent (October 18).** Added a dated
+  announcement; home closing box now reads "Notifications have been sent";
+  the Key Deadlines highlight moved to Camera-ready. Important Dates notice and
+  status ("Sent"), the Submission page notice/FAQ, and the Program page notice
+  no longer describe notification as upcoming.
+- `_tools/build.py` updated in step; pages regenerated from it.
+
 ## 2026-10-03 (later)
 
 - **Navigation regrouped into dropdowns.** Eleven top-level links needed 1155px

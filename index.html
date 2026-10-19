@@ -21,6 +21,16 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <div class="site-banner" id="poster-banner">
+    <div class="site-banner-inner">
+      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 25, 2026</strong></span>
+      <a class="site-banner-link" href="poster.html">Submit a Poster &rarr;</a>
+    </div>
+  </div>
+  <script>
+    if (Date.now() > Date.parse('2026-10-26T07:00:00Z')) document.getElementById('poster-banner').hidden = true;
+  </script>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="site-logo" href="index.html" aria-label="IEEE ISR/SIAS 2026 home">
@@ -76,7 +86,6 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="poster.html">Submit a Poster &rarr;</a>
           <a class="btn btn-outline" href="submission.html">Submission Information</a>
           <a class="btn btn-outline" href="assets/docs/ISRSIAS2026_cfp_2st.pdf" target="_blank" rel="noopener noreferrer">
             Call for Papers (PDF)
@@ -84,15 +93,20 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-labelledby="next-deadline">
-        <div class="status-label">Next milestone</div>
-        <h2 id="next-deadline">October 18, 2026</h2>
-        <p>Notification of paper acceptance. Submission closed on September 5, 2026.</p>
-        <p><strong><a href="poster.html">Poster abstracts</a> are open until October 25, 2026.</strong></p>
-        <p style="margin-bottom:0;">
-          Camera-ready final papers are due November 2, 2026.
-          <a href="dates.html">See all dates</a>
-        </p>
+      <aside class="hero-card poster-cta" aria-labelledby="poster-cta-title">
+        <img class="poster-cta-photo" src="assets/img/poster-session-1.jpg" width="1400" height="1050"
+             alt="Attendees discussing posters with presenters at a poster session" />
+        <div class="poster-cta-body">
+          <div class="status-label">&#9679; Call for Posters &mdash; open now</div>
+          <h2 id="poster-cta-title">Poster Session</h2>
+          <p class="poster-cta-deadline">Submit by <strong>October 25, 2026</strong></p>
+          <p>Work in progress, late-breaking results and industrial case studies. Abstract + one-page PDF, no peer review.</p>
+          <a class="btn btn-accent btn-lg btn-block" href="poster.html">Submit a Poster &rarr;</a>
+          <p class="poster-cta-next">
+            Accepted papers: camera-ready due <strong>November 2, 2026</strong> &middot;
+            <a href="dates.html">All dates</a>
+          </p>
+        </div>
       </aside>
     </div>
   </section>
@@ -107,6 +121,13 @@
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-18">
+            <span class="announcement-date">October 18, 2026</span>
+            <a href="submission.html">
+              Notifications of paper acceptance have been sent &mdash; camera-ready final papers are due November 2, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-10-03">
             <span class="announcement-date">October 3, 2026</span>
             <a href="poster.html">
@@ -213,11 +234,11 @@
           <div class="label">Paper Submission</div>
           <div class="date">September 5, 2026</div>
         </article>
-        <article class="card date-card highlight">
+        <article class="card date-card">
           <div class="label">Notification</div>
           <div class="date">October 18, 2026</div>
         </article>
-        <article class="card date-card">
+        <article class="card date-card highlight">
           <div class="label">Camera-ready</div>
           <div class="date">November 2, 2026</div>
         </article>
@@ -230,12 +251,12 @@
 
     <section class="footer-cta">
       <div>
-        <h2>Papers are under review</h2>
-        <p>Submission closed September 5, 2026. Authors will be notified by October 18, 2026.</p>
+        <h2>Notifications have been sent</h2>
+        <p>Authors of accepted papers: please submit your camera-ready paper by November 2, 2026.</p>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="submission.html">Submission Guide</a>
-        <a class="btn btn-outline" href="assets/docs/ISRSIAS2026_cfp_2st.pdf" target="_blank" rel="noopener noreferrer">Download CFP</a>
+        <a class="btn btn-primary" href="submission.html">Paper Submission</a>
+        <a class="btn btn-outline" href="poster.html">Submit a Poster</a>
       </div>
     </section>
 

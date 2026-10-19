@@ -68,6 +68,26 @@ def _nav(page):
         out.append('        </div>')
     return "\n".join(out)
 
+# Site-wide strip above the header pointing to the poster call. It hides
+# itself once PaperPlaza closes (October 25, 23:59:59 Pacific Time = PDT, so
+# 2026-10-26 06:59:59 UTC). Not shown on the poster page itself.
+POSTER_CLOSES_UTC = "2026-10-26T07:00:00Z"
+
+def poster_banner(page):
+    if page == "poster.html":
+        return ""
+    return """
+  <div class="site-banner" id="poster-banner">
+    <div class="site-banner-inner">
+      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 25, 2026</strong></span>
+      <a class="site-banner-link" href="poster.html">Submit a Poster &rarr;</a>
+    </div>
+  </div>
+  <script>
+    if (Date.now() > Date.parse('%s')) document.getElementById('poster-banner').hidden = true;
+  </script>
+""" % POSTER_CLOSES_UTC
+
 def head(page, title, desc):
     nav = _nav(page)
     return f"""<!DOCTYPE html>
@@ -92,7 +112,7 @@ def head(page, title, desc):
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-
+{poster_banner(page)}
   <header class="site-header">
     <div class="header-inner">
       <a class="site-logo" href="index.html" aria-label="{CONF_TITLE} home">
@@ -229,7 +249,6 @@ f"""
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="poster.html">Submit a Poster &rarr;</a>
           <a class="btn btn-outline" href="submission.html">Submission Information</a>
           <a class="btn btn-outline" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">
             Call for Papers (PDF)
@@ -237,15 +256,20 @@ f"""
         </div>
       </div>
 
-      <aside class="hero-card" aria-labelledby="next-deadline">
-        <div class="status-label">Next milestone</div>
-        <h2 id="next-deadline">October 18, 2026</h2>
-        <p>Notification of paper acceptance. Submission closed on September 5, 2026.</p>
-        <p><strong><a href="poster.html">Poster abstracts</a> are open until October 25, 2026.</strong></p>
-        <p style="margin-bottom:0;">
-          Camera-ready final papers are due November 2, 2026.
-          <a href="dates.html">See all dates</a>
-        </p>
+      <aside class="hero-card poster-cta" aria-labelledby="poster-cta-title">
+        <img class="poster-cta-photo" src="assets/img/poster-session-1.jpg" width="1400" height="1050"
+             alt="Attendees discussing posters with presenters at a poster session" />
+        <div class="poster-cta-body">
+          <div class="status-label">&#9679; Call for Posters &mdash; open now</div>
+          <h2 id="poster-cta-title">Poster Session</h2>
+          <p class="poster-cta-deadline">Submit by <strong>October 25, 2026</strong></p>
+          <p>Work in progress, late-breaking results and industrial case studies. Abstract + one-page PDF, no peer review.</p>
+          <a class="btn btn-accent btn-lg btn-block" href="poster.html">Submit a Poster &rarr;</a>
+          <p class="poster-cta-next">
+            Accepted papers: camera-ready due <strong>November 2, 2026</strong> &middot;
+            <a href="dates.html">All dates</a>
+          </p>
+        </div>
       </aside>
     </div>
   </section>
@@ -260,6 +284,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-18">
+            <span class="announcement-date">October 18, 2026</span>
+            <a href="submission.html">
+              Notifications of paper acceptance have been sent &mdash; camera-ready final papers are due November 2, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-10-03">
             <span class="announcement-date">October 3, 2026</span>
             <a href="poster.html">
@@ -366,11 +397,11 @@ f"""
           <div class="label">Paper Submission</div>
           <div class="date">September 5, 2026</div>
         </article>
-        <article class="card date-card highlight">
+        <article class="card date-card">
           <div class="label">Notification</div>
           <div class="date">October 18, 2026</div>
         </article>
-        <article class="card date-card">
+        <article class="card date-card highlight">
           <div class="label">Camera-ready</div>
           <div class="date">November 2, 2026</div>
         </article>
@@ -383,12 +414,12 @@ f"""
 
     <section class="footer-cta">
       <div>
-        <h2>Papers are under review</h2>
-        <p>Submission closed September 5, 2026. Authors will be notified by October 18, 2026.</p>
+        <h2>Notifications have been sent</h2>
+        <p>Authors of accepted papers: please submit your camera-ready paper by November 2, 2026.</p>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="submission.html">Submission Guide</a>
-        <a class="btn btn-outline" href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">Download CFP</a>
+        <a class="btn btn-primary" href="submission.html">Paper Submission</a>
+        <a class="btn btn-outline" href="poster.html">Submit a Poster</a>
       </div>
     </section>
 
@@ -545,9 +576,9 @@ f"""
         <div>
           <strong>Paper submission closed on September 5, 2026.</strong>
           <p>
-            Papers are under peer review. The next milestone is notification of acceptance on
-            <strong>October 18, 2026</strong>, followed by camera-ready final papers on
-            <strong>November 2, 2026</strong>. The
+            Notifications of acceptance were sent on <strong>October 18, 2026</strong>. The next
+            milestones are <a href="poster.html">poster abstracts</a> on <strong>October 25, 2026</strong>
+            and camera-ready final papers on <strong>November 2, 2026</strong>. The
             <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
             is the official reference document.
           </p>
@@ -581,9 +612,9 @@ f"""
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">September 30, 2026</span><br /><span class="date-new">October 18, 2026</span></td>
+              <td>October 18, 2026</td>
               <td>Notification of paper acceptance</td>
-              <td>Updated</td>
+              <td>Sent</td>
             </tr>
             <tr>
               <td>October 25, 2026</td>
@@ -720,9 +751,8 @@ f"""
         GENERIC IEEE RAS PaperPlaza entry page, which lists every open RAS
         conference. The link is kept so authors can sign in and view their own
         submission; it is no longer presented as a call to action.
-        Next milestone: notification of acceptance, October 18, 2026. When
-        results go out, update this notice, the FAQ answer below, the hero card
-        and key-date cards on index.html, and the status column in dates.html.
+        Notifications of acceptance were sent on October 18, 2026. Next
+        milestone: camera-ready final papers, November 2, 2026.
         ==========================================================================
       -->
       <div class="notice-box info">
@@ -730,10 +760,9 @@ f"""
         <div>
           <strong>Paper submission is closed.</strong>
           <p>
-            The submission deadline was <strong>September 5, 2026</strong>. Papers are now under
-            peer review, and authors will be notified of the outcome by
-            <strong>October 18, 2026</strong>. Camera-ready final papers are due
-            <strong>November 2, 2026</strong>.
+            The submission deadline was <strong>September 5, 2026</strong>. Notifications of
+            acceptance were sent on <strong>October 18, 2026</strong>. Camera-ready final papers
+            are due <strong>November 2, 2026</strong>.
           </p>
         </div>
       </div>
@@ -857,7 +886,7 @@ f"""
           <p>
             No. Submission closed on September 5, 2026. Papers already submitted through
             <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>
-            are under review, with notification of acceptance by October 18, 2026.
+            have been reviewed, and notifications of acceptance were sent on October 18, 2026.
           </p>
         </details>
 
@@ -956,6 +985,26 @@ f"""
           you do not need to submit again &mdash; you will be contacted directly.
         </p>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">At the venue</span>
+        <h2>What the Poster Session Looks Like</h2>
+        <p>
+          Each presenter stands by their A0 poster board and talks visitors through the work.
+          Sessions are informal and conversation-driven &mdash; a good way to meet researchers and
+          industry engineers working on robot safety.
+        </p>
+      </div>
+
+      <div class="photo-grid">
+        <img src="assets/img/poster-session-1.jpg" width="1400" height="1050" loading="lazy"
+             alt="Attendees discussing posters with presenters at a poster session" />
+        <img src="assets/img/poster-session-2.jpg" width="916" height="582" loading="lazy"
+             alt="A presenter explaining a poster to a group of visitors" />
+      </div>
+      <p class="photo-caption">What a poster session looks like.</p>
     </section>
 
     <section class="section">
@@ -1217,9 +1266,9 @@ f"""
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>The program will be published after paper notification.</strong>
+          <strong>The program is being prepared.</strong>
           <p>
-            Notification of acceptance is scheduled for <strong>October 18, 2026</strong>. The detailed
+            Notifications of acceptance were sent on <strong>October 18, 2026</strong>. The detailed
             program is expected to follow in November 2026.
           </p>
         </div>

@@ -21,6 +21,16 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <div class="site-banner" id="poster-banner">
+    <div class="site-banner-inner">
+      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 25, 2026</strong></span>
+      <a class="site-banner-link" href="poster.html">Submit a Poster &rarr;</a>
+    </div>
+  </div>
+  <script>
+    if (Date.now() > Date.parse('2026-10-26T07:00:00Z')) document.getElementById('poster-banner').hidden = true;
+  </script>
+
   <header class="site-header">
     <div class="header-inner">
       <a class="site-logo" href="index.html" aria-label="IEEE ISR/SIAS 2026 home">
@@ -76,9 +86,9 @@
         <div>
           <strong>Paper submission closed on September 5, 2026.</strong>
           <p>
-            Papers are under peer review. The next milestone is notification of acceptance on
-            <strong>October 18, 2026</strong>, followed by camera-ready final papers on
-            <strong>November 2, 2026</strong>. The
+            Notifications of acceptance were sent on <strong>October 18, 2026</strong>. The next
+            milestones are <a href="poster.html">poster abstracts</a> on <strong>October 25, 2026</strong>
+            and camera-ready final papers on <strong>November 2, 2026</strong>. The
             <a href="assets/docs/ISRSIAS2026_cfp_2st.pdf" target="_blank" rel="noopener noreferrer">CFP PDF</a>
             is the official reference document.
           </p>
@@ -112,9 +122,9 @@
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">September 30, 2026</span><br /><span class="date-new">October 18, 2026</span></td>
+              <td>October 18, 2026</td>
               <td>Notification of paper acceptance</td>
-              <td>Updated</td>
+              <td>Sent</td>
             </tr>
             <tr>
               <td>October 25, 2026</td>

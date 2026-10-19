@@ -644,6 +644,59 @@ details p { color: var(--muted); margin: 12px 0 0; }
   box-shadow: var(--shadow);
 }
 
+/* Site-wide strip above the header: the call for posters. Hidden by a
+   one-line script once the poster deadline has passed. */
+.site-banner { background: var(--accent); color: var(--text); }
+.site-banner[hidden] { display: none; }
+.site-banner-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 9px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 16px;
+  font-size: 14px;
+  text-align: center;
+}
+.site-banner-link {
+  font-weight: 800;
+  color: var(--deep-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+/* Home hero card as a poster-session banner with a photo on top */
+.hero-card.poster-cta {
+  padding: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text);
+}
+.poster-cta-photo { width: 100%; height: auto; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 40%; }
+.poster-cta-body { padding: 22px 26px 24px; }
+.poster-cta .status-label { background: #e7f6ee; color: var(--success); margin-bottom: 12px; }
+.poster-cta h2 { color: var(--deep-blue); font-size: 26px; margin: 0 0 6px; }
+.poster-cta p { color: var(--muted); }
+.poster-cta .poster-cta-deadline { font-size: 17px; margin: 0 0 10px; color: var(--text); }
+.poster-cta-deadline strong { color: #b42318; }
+.hero .poster-cta .btn-accent { background: var(--accent); color: var(--text); font-weight: 800; }
+.hero .poster-cta .btn-accent:hover { filter: brightness(0.95); }
+.poster-cta .poster-cta-next {
+  font-size: 13px;
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.hero .poster-cta-next a { color: var(--ieee-blue); }
+
+/* Photos on the poster page */
+.photo-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; align-items: start; }
+.photo-grid img { width: 100%; height: auto; border-radius: var(--radius-md); }
+.photo-caption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
 /* Opened by click (JS), by keyboard focus, or by hover on pointer devices.
    Focus-within is what keeps the menu reachable if JS never runs. */
 .nav-group[data-open="true"] .nav-menu,
@@ -705,9 +758,10 @@ details p { color: var(--muted); margin: 12px 0 0; }
   .btn { width: 100%; }
   .notice-box { grid-template-columns: 1fr; }
   .card, .footer-cta { padding: 22px; }
+  .photo-grid { grid-template-columns: 1fr; }
 }
 
 @media print {
-  .site-header, .hero-actions, .footer-cta { display: none; }
+  .site-banner, .site-header, .hero-actions, .footer-cta { display: none; }
   body { background: #fff; }
 }
