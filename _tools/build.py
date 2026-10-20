@@ -284,6 +284,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-20">
+            <span class="announcement-date">October 20, 2026</span>
+            <a href="submission.html">
+              Notifications of paper acceptance have been sent &mdash; camera-ready final papers are due November 2, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-10-03">
             <span class="announcement-date">October 3, 2026</span>
             <a href="poster.html">
@@ -390,11 +397,11 @@ f"""
           <div class="label">Paper Submission</div>
           <div class="date">September 5, 2026</div>
         </article>
-        <article class="card date-card highlight">
-          <div class="label">Notification</div>
-          <div class="date"><span class="date-old">October 18, 2026</span><br /><span class="date-new">To be announced</span></div>
-        </article>
         <article class="card date-card">
+          <div class="label">Notification</div>
+          <div class="date">October 20, 2026</div>
+        </article>
+        <article class="card date-card highlight">
           <div class="label">Camera-ready</div>
           <div class="date">November 2, 2026</div>
         </article>
@@ -407,8 +414,8 @@ f"""
 
     <section class="footer-cta">
       <div>
-        <h2>Papers are under review</h2>
-        <p>Submission closed September 5, 2026. Notifications of acceptance will be sent shortly.</p>
+        <h2>Notifications have been sent</h2>
+        <p>Authors of accepted papers: please submit your camera-ready paper by November 2, 2026.</p>
       </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="submission.html">Paper Submission</a>
@@ -569,7 +576,7 @@ f"""
         <div>
           <strong>Paper submission closed on September 5, 2026.</strong>
           <p>
-            Papers are under peer review, and notifications of acceptance will be sent shortly.
+            Notifications of acceptance were sent on <strong>October 20, 2026</strong>.
             The next milestones are <a href="poster.html">poster abstracts</a> on
             <strong>October 25, 2026</strong> and camera-ready final papers on
             <strong>November 2, 2026</strong>. The
@@ -606,9 +613,9 @@ f"""
               <td>Closed</td>
             </tr>
             <tr>
-              <td><span class="date-old">October 18, 2026</span><br /><span class="date-new">To be announced</span></td>
+              <td>October 20, 2026</td>
               <td>Notification of paper acceptance</td>
-              <td>Updated</td>
+              <td>Sent</td>
             </tr>
             <tr>
               <td>October 25, 2026</td>
@@ -745,11 +752,9 @@ f"""
         GENERIC IEEE RAS PaperPlaza entry page, which lists every open RAS
         conference. The link is kept so authors can sign in and view their own
         submission; it is no longer presented as a call to action.
-        Notification of acceptance was scheduled for October 18, 2026 but has
-        not been sent yet (Program Chair, 2026-10-20). New date to be announced.
-        When results go out, update this notice, the FAQ answer below, the
-        key-date card and closing box on index.html, the dates.html notice and
-        status column, and the program.html notice.
+        Notifications of acceptance were sent on October 20, 2026 (confirmed by
+        the Program Chair; originally scheduled for October 18). Camera-ready
+        deadline unchanged: November 2, 2026.
         ==========================================================================
       -->
       <div class="notice-box info">
@@ -757,9 +762,9 @@ f"""
         <div>
           <strong>Paper submission is closed.</strong>
           <p>
-            The submission deadline was <strong>September 5, 2026</strong>. Papers are under
-            peer review, and notifications of acceptance will be sent shortly. Camera-ready final
-            papers are due <strong>November 2, 2026</strong>.
+            The submission deadline was <strong>September 5, 2026</strong>. Notifications of
+            acceptance were sent on <strong>October 20, 2026</strong>. Camera-ready final papers are due
+            <strong>November 2, 2026</strong>.
           </p>
         </div>
       </div>
@@ -854,7 +859,7 @@ f"""
         <div class="flow-item"><strong>Prepare</strong><span>Extended abstract, IEEE format</span></div>
         <div class="flow-item"><strong>Submit</strong><span>By September 5, 2026</span></div>
         <div class="flow-item"><strong>Review</strong><span>Peer review</span></div>
-        <div class="flow-item"><strong>Notification</strong><span>To be announced</span></div>
+        <div class="flow-item"><strong>Notification</strong><span>October 20, 2026</span></div>
         <div class="flow-item"><strong>Camera-ready</strong><span>November 2, 2026</span></div>
       </div>
     </section>
@@ -883,7 +888,7 @@ f"""
           <p>
             No. Submission closed on September 5, 2026. Papers already submitted through
             <a href="{SUBMIT_URL}" target="_blank" rel="noopener noreferrer">IEEE RAS PaperPlaza</a>
-            are under review, and notifications of acceptance will be sent shortly.
+            have been reviewed, and notifications of acceptance were sent on October 20, 2026.
           </p>
         </details>
 
@@ -1263,10 +1268,10 @@ f"""
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>The program will be published after paper notification.</strong>
+          <strong>The program is being prepared.</strong>
           <p>
-            Notifications of acceptance will be sent shortly. The detailed program is expected to
-            follow in November 2026.
+            Notifications of acceptance were sent on <strong>October 20, 2026</strong>. The detailed program is
+            expected to follow in November 2026.
           </p>
         </div>
       </div>

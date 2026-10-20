@@ -3,6 +3,15 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-21
+
+- **Notifications of acceptance sent on October 20, 2026** (confirmed by the
+  Program Chair; originally scheduled for October 18). Camera-ready deadline
+  unchanged (November 2). Added a dated announcement; home closing box reads
+  "Notifications have been sent"; Key Deadlines shows October 20 and highlights
+  Camera-ready; Important Dates notice and row (status "Sent"), Submission
+  notice/FAQ/flow diagram, and Program notice updated to match.
+
 ## 2026-10-20
 
 - **Correction: notifications of acceptance have NOT been sent yet.** The
