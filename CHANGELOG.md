@@ -3,6 +3,21 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-22
+
+- **Rejected-paper authors must now submit a poster separately.** The page said
+  their title and authors were already on file and they did not need to submit
+  again. The abstract book is built from the poster submissions themselves, so
+  that is no longer true. At the General Chair's request the old wording stays
+  on the page struck through, with the correction after it, rather than being
+  silently removed.
+- **System problem noted.** Resubmitting a non-accepted paper to the poster
+  session is currently blocked (the system rejects a matching title). The page
+  says the Program Committee will contact affected authors once it is fixed.
+- The FAQ answer on the same point was corrected too. Only the Overview was
+  requested, but leaving the FAQ saying "you do not need to submit again" would
+  have contradicted it two screens further down.
+
 ## 2026-10-21
 
 - **Notifications of acceptance sent on October 20, 2026** (confirmed by the
@@ -129,7 +144,6 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
   HP-only change — PaperPlaza already accepts submissions until September 5.
 
 ## 2026-08-07
-
 
 - **Home:** The "NEW" badge on announcements is now automatic. Each dated
   announcement carries a `data-date`, and a small script shows the NEW badge

@@ -982,9 +982,18 @@ f"""
           poster at the venue; the A0 poster itself is never uploaded.
         </p>
         <p>
-          Authors whose regular paper is not accepted will be invited to present their work as a
+          <del>Authors whose regular paper is not accepted will be invited to present their work as a
           poster instead. If that applies to you, your title and author list are already on file and
-          you do not need to submit again &mdash; you will be contacted directly.
+          you do not need to submit again &mdash; you will be contacted directly.</del>
+        </p>
+        <p>
+          <strong>Updated October 22, 2026.</strong> Authors of a paper that was not accepted who
+          wish to take part in the poster session must make a <strong>new poster submission</strong>.
+        </p>
+        <p>
+          There is currently a problem in the submission system affecting resubmission of
+          non-accepted papers to the poster session. Once it is resolved, the Program Committee will
+          contact the affected authors individually.
         </p>
       </div>
     </section>
@@ -1213,9 +1222,12 @@ f"""
         <details>
           <summary>My regular paper was not accepted. Can I present a poster?</summary>
           <p>
-            Yes. Authors of regular papers that are not accepted are invited to present as posters.
-            Your title and author list are already on file, so you do not need to submit again; the
-            organizers will contact you.
+            Yes, but you must make a new poster submission. Your earlier paper entry is not carried
+            over into the poster session.
+          </p>
+          <p>
+            There is currently a problem in the submission system affecting this. Once it is
+            resolved, the Program Committee will contact the affected authors individually.
           </p>
         </details>
 
