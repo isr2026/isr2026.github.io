@@ -419,6 +419,26 @@ del { color: var(--muted); text-decoration: line-through; }
 .date-table td:first-child { font-weight: 700; color: var(--deep-blue); white-space: nowrap; }
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md); }
 
+/* Program at a glance: a time column plus one column per room. */
+.program-grid { min-width: 720px; }
+.program-grid th[scope="row"] {
+  background: var(--white);
+  color: var(--deep-blue);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.program-grid td { text-align: center; font-weight: 600; color: var(--deep-blue); }
+.program-grid td:empty::after { content: "\00b7"; color: var(--border); }
+.program-grid .slot-break {
+  background: var(--light-bg);
+  color: var(--muted);
+  font-weight: 500;
+  font-style: italic;
+}
+
 /* ===== Notices ===== */
 
 .notice-box {

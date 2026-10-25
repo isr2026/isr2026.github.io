@@ -287,6 +287,13 @@ f"""
         <ul class="announcement-list">
           <li class="announcement-item" data-date="2026-10-25">
             <span class="announcement-date">October 25, 2026</span>
+            <a href="program.html">
+              Program at a glance published &mdash; session schedule and rooms for all three days
+            </a>
+          </li>
+
+          <li class="announcement-item" data-date="2026-10-25">
+            <span class="announcement-date">October 25, 2026</span>
             <a href="poster.html">
               Poster submission deadline extended to October 30, 2026
             </a>
@@ -637,7 +644,7 @@ f"""
             </tr>
             <tr>
               <td>December 2&ndash;4, 2026</td>
-              <td>Conference at {CONF_VENUE}</td>
+              <td><a href="program.html">Conference</a> at {CONF_VENUE}</td>
               <td>Scheduled</td>
             </tr>
           </tbody>
@@ -1279,49 +1286,232 @@ f"""
 """)
 
 write("program.html", "Program",
-      f"Technical program, keynotes, and schedule for {CONF_TITLE}.",
+      f"Program at a glance, session schedule and rooms for {CONF_TITLE}.",
 hero("Program", "Conference Program",
-     "The technical program, keynote speakers, and session schedule will be published here.") +
+     "Program at a glance for the three conference days at INTEX Osaka.") +
 f"""
   <main id="main">
 
+    <!--
+      ==========================================================================
+      WEB CHAIR NOTE - program at a glance
+      Built from the Program Chair's workbook conference_program_rooms_r6.xlsx,
+      tab "公開用Program-at-glance", received 2026-10-25. The tables below are
+      generated from that grid, not typed by hand.
+
+      Session labels only (A11, B21, ...). Paper titles and authors are not in
+      that file and are still to come; the notice below says so.
+
+      Two things in the source grid to re-check with the Program Chair if the
+      displayed times look wrong:
+        - The time column skips 16:40 (it runs ... 16:00, 16:20, 17:00 ...),
+          which is why Dec 2 Poster Session 1 reads 16:00-17:20 and the Dec 3
+          afternoon break reads 16:20-17:00.
+        - December 4 has nothing between 12:00 and 12:40, where the combined
+          Lunch / Award / Closing block starts.
+      ==========================================================================
+    -->
     <section class="section">
-      <div class="notice-box">
-        <div class="notice-icon" aria-hidden="true">!</div>
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>The program is being prepared.</strong>
+          <strong>Program at a glance is now available.</strong>
           <p>
-            Notifications of acceptance were sent on <strong>October 20, 2026</strong>. The detailed program is
-            expected to follow in November 2026.
+            The session structure and room allocation for all three days are below. The detailed
+            session program &mdash; paper titles, authors and presentation order within each session
+            &mdash; will be published on this page once it is finalised.
           </p>
         </div>
       </div>
-
-{tba('The technical program, including oral and poster sessions, special sessions, workshops, tutorials, and keynote speakers, will be published on this page.')}
     </section>
 
     <section class="section">
       <div class="section-heading">
-        <span class="kicker">Structure</span>
-        <h2>Planned Program Structure</h2>
-        <p>Indicative only. The final structure will be confirmed with the detailed program.</p>
+        <span class="kicker">Schedule</span>
+        <h2>Program at a Glance</h2>
+        <p>
+          All sessions take place at <a href="venue.html">INTEX Osaka</a>. Times are local
+          (Japan Standard Time).
+        </p>
       </div>
 
+      <h3 id="day1">Day 1 &mdash; Wednesday, December 2, 2026</h3>
+      <div class="table-wrap">
+        <table class="date-table program-grid">
+          <caption>Program at a glance &mdash; December 2, 2026</caption>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Room A</th><th scope="col">Room B</th><th scope="col">Conference Hall</th><th scope="col">Party Hall</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">13:20&ndash;14:00</th>
+              <td></td>
+              <td></td>
+              <td>Opening ceremony</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">14:20&ndash;15:40</th>
+              <td>Session A11</td>
+              <td>Session B11</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">15:40&ndash;16:00</th>
+              <td colspan="4" class="slot-break">Break</td>
+            </tr>
+            <tr>
+              <th scope="row">16:00&ndash;17:20</th>
+              <td></td>
+              <td></td>
+              <td>Poster Session 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">18:00&ndash;20:00</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Welcome Party</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="day2">Day 2 &mdash; Thursday, December 3, 2026</h3>
+      <div class="table-wrap">
+        <table class="date-table program-grid">
+          <caption>Program at a glance &mdash; December 3, 2026</caption>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Room A</th><th scope="col">Room B</th><th scope="col">Conference Hall</th><th scope="col">Party Hall</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">09:00&ndash;10:20</th>
+              <td>Session A21</td>
+              <td>Session B21</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">10:20&ndash;10:40</th>
+              <td colspan="4" class="slot-break">Break</td>
+            </tr>
+            <tr>
+              <th scope="row">10:40&ndash;12:00</th>
+              <td>Session A22</td>
+              <td>Session B22</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">12:00&ndash;13:20</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="slot-break">Lunch</td>
+            </tr>
+            <tr>
+              <th scope="row">13:20&ndash;15:00</th>
+              <td>Session A23</td>
+              <td>Session B23</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">15:00&ndash;15:20</th>
+              <td colspan="4" class="slot-break">Break</td>
+            </tr>
+            <tr>
+              <th scope="row">15:20&ndash;16:20</th>
+              <td></td>
+              <td></td>
+              <td>Poster Session 2</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">16:20&ndash;17:00</th>
+              <td colspan="4" class="slot-break">Break</td>
+            </tr>
+            <tr>
+              <th scope="row">17:00&ndash;18:00</th>
+              <td></td>
+              <td></td>
+              <td>Plenary Talk 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">19:00&ndash;21:00</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Banquet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="day3">Day 3 &mdash; Friday, December 4, 2026</h3>
+      <div class="table-wrap">
+        <table class="date-table program-grid">
+          <caption>Program at a glance &mdash; December 4, 2026</caption>
+          <thead>
+            <tr><th scope="col">Time</th><th scope="col">Room A</th><th scope="col">Room B</th><th scope="col">Conference Hall</th><th scope="col">Party Hall</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">09:20&ndash;10:20</th>
+              <td></td>
+              <td></td>
+              <td>Plenary Talk 2</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">10:20&ndash;10:40</th>
+              <td colspan="4" class="slot-break">Break</td>
+            </tr>
+            <tr>
+              <th scope="row">10:40&ndash;12:00</th>
+              <td>Session A31</td>
+              <td>Session B31</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">12:40&ndash;14:00</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Lunch &middot; Award ceremony &middot; Closing ceremony</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="grid-3">
         <article class="card">
-          <div class="step-number" aria-hidden="true">1</div>
-          <h3>Day 1 &mdash; December 2</h3>
-          <p>Workshops and tutorials, opening, keynote.</p>
+          <h3>Parallel sessions</h3>
+          <p>
+            Oral sessions run in parallel in <strong>Room A</strong> and <strong>Room B</strong>.
+            Session codes follow the pattern A11, B21 and so on.
+          </p>
         </article>
         <article class="card">
-          <div class="step-number" aria-hidden="true">2</div>
-          <h3>Day 2 &mdash; December 3</h3>
-          <p>Technical sessions, special sessions, poster session.</p>
+          <h3>Poster sessions</h3>
+          <p>
+            Two poster sessions are held in the Conference Hall, on December 2 and December 3.
+            See the <a href="poster.html">poster page</a> for submission and presentation details.
+          </p>
         </article>
         <article class="card">
-          <div class="step-number" aria-hidden="true">3</div>
-          <h3>Day 3 &mdash; December 4</h3>
-          <p>Technical sessions, awards, closing.</p>
+          <h3>Social program</h3>
+          <p>
+            A Welcome Party on December 2 and the Banquet on December 3, both in the Party Hall.
+            Details will follow with the detailed program.
+          </p>
         </article>
       </div>
     </section>

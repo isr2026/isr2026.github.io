@@ -5,6 +5,23 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
 
 ## 2026-10-25
 
+- **Program at a glance published** (`program.html`), from the Program Chair's
+  workbook `conference_program_rooms_r6.xlsx`, tab `公開用Program-at-glance`.
+  One table per day: a time column plus Room A, Room B, Conference Hall and
+  Party Hall. The tables are generated from the spreadsheet's merged cells
+  rather than retyped, and empty 20-minute rows are collapsed so each day is
+  4-10 rows instead of 30. The invented "Planned Program Structure" cards were
+  removed; real content now covers that ground.
+  - Only session labels (A11, B21 ...) exist so far. A notice says paper
+    titles, authors and running order will follow.
+  - Two oddities in the source grid are noted in a comment on the page and
+    were rendered as-is rather than guessed at: the time column skips 16:40,
+    which stretches Dec 2 Poster Session 1 to 16:00-17:20 and the Dec 3
+    afternoon break to 40 minutes; and Dec 4 has a gap from 12:00 to 12:40
+    where the combined Lunch / Award / Closing block begins.
+- Home page announcement for the program, and the Important Dates conference
+  row now links to it.
+
 - **Poster deadline extended to October 30, 2026**, confirmed against the live
   PaperPlaza entry (Poster Paper: September 22 to October 30, status Submit).
   Updated the site-wide Call for Posters strip, the home hero poster card, the
