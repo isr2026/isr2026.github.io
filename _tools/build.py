@@ -69,9 +69,10 @@ def _nav(page):
     return "\n".join(out)
 
 # Site-wide strip above the header pointing to the poster call. It hides
-# itself once PaperPlaza closes (October 25, 23:59:59 Pacific Time = PDT, so
-# 2026-10-26 06:59:59 UTC). Not shown on the poster page itself.
-POSTER_CLOSES_UTC = "2026-10-26T07:00:00Z"
+# itself once PaperPlaza closes. Extended to October 30 on 2026-10-25;
+# 23:59:59 Pacific Time is PDT here (DST ends November 1), so 2026-10-31
+# 06:59:59 UTC. Not shown on the poster page itself.
+POSTER_CLOSES_UTC = "2026-10-31T07:00:00Z"
 
 def poster_banner(page):
     if page == "poster.html":
@@ -79,7 +80,7 @@ def poster_banner(page):
     return """
   <div class="site-banner" id="poster-banner">
     <div class="site-banner-inner">
-      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 25, 2026</strong></span>
+      <span><strong>Call for Posters</strong> &mdash; abstracts are open until <strong>October 30, 2026</strong></span>
       <a class="site-banner-link" href="poster.html">Submit a Poster &rarr;</a>
     </div>
   </div>
@@ -262,7 +263,7 @@ f"""
         <div class="poster-cta-body">
           <div class="status-label">&#9679; Call for Posters &mdash; open now</div>
           <h2 id="poster-cta-title">Poster Session</h2>
-          <p class="poster-cta-deadline">Submit by <strong>October 25, 2026</strong></p>
+          <p class="poster-cta-deadline">Submit by <strong>October 30, 2026</strong></p>
           <p>Work in progress, late-breaking results and industrial case studies. Abstract + one-page PDF, no peer review.</p>
           <a class="btn btn-accent btn-lg btn-block" href="poster.html">Submit a Poster &rarr;</a>
           <p class="poster-cta-next">
@@ -284,6 +285,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-25">
+            <span class="announcement-date">October 25, 2026</span>
+            <a href="poster.html">
+              Poster submission deadline extended to October 30, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-10-20">
             <span class="announcement-date">October 20, 2026</span>
             <a href="submission.html">
@@ -578,7 +586,7 @@ f"""
           <p>
             Notifications of acceptance were sent on <strong>October 20, 2026</strong>.
             The next milestones are <a href="poster.html">poster abstracts</a> on
-            <strong>October 25, 2026</strong> and camera-ready final papers on
+            <strong>October 30, 2026</strong> and camera-ready final papers on
             <strong>November 2, 2026</strong>. The
             <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
             is the official reference document.
@@ -618,9 +626,9 @@ f"""
               <td>Sent</td>
             </tr>
             <tr>
-              <td>October 25, 2026</td>
+              <td><span class="date-old">October 25, 2026</span><br /><span class="date-new">October 30, 2026</span></td>
               <td>Deadline for <a href="poster.html">poster abstract</a> submission</td>
-              <td>Open</td>
+              <td>Extended</td>
             </tr>
             <tr>
               <td><span class="date-old">October 13, 2026</span><br /><span class="date-new">November 2, 2026</span></td>
@@ -925,7 +933,8 @@ f"""
       Content confirmed by the General Chair (Tanigawa) on 2026-10-03, and
       checked against the live PaperPlaza entry for ISR-SIAS 2026 (ConfID 586)
       on the same day. PaperPlaza shows the "Poster Paper" track as open:
-      opened 2026-09-22, closes 2026-10-25, deadlines 23:59:59 Pacific Time.
+      opened 2026-09-22, closes 2026-10-30 (extended from 2026-10-25 by the
+      Program Chair on 2026-10-25), deadlines 23:59:59 Pacific Time.
 
       CONFIRMED by the General Chair:
         - Submission goes through PaperPlaza, same as regular papers. A poster
@@ -955,7 +964,7 @@ f"""
         <div>
           <strong>Poster submission is open.</strong>
           <p>
-            Submit through IEEE RAS PaperPlaza by <strong>October 25, 2026</strong>
+            Submit through IEEE RAS PaperPlaza by <strong>October 30, 2026</strong>
             (23:59:59 Pacific Time). On the PaperPlaza page, select
             <strong>ISR-SIAS 2026</strong>, then choose <strong>Poster Paper</strong> from the list
             of submission types.
@@ -1086,7 +1095,7 @@ f"""
         <div class="card">
           <h3>Submit your poster abstract</h3>
           <p>
-            The poster track is open until <strong>October 25, 2026</strong>.
+            The poster track is open until <strong>October 30, 2026</strong>.
           </p>
           <p>
             <a class="btn btn-primary btn-lg btn-block"
@@ -1125,9 +1134,9 @@ f"""
               <td>Open</td>
             </tr>
             <tr>
-              <td>October 25, 2026</td>
+              <td><span class="date-old">October 25, 2026</span><br /><span class="date-new">October 30, 2026</span></td>
               <td>Deadline for poster abstract submission</td>
-              <td>Open</td>
+              <td>Extended</td>
             </tr>
             <tr>
               <td>December 2&ndash;4, 2026</td>

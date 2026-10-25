@@ -3,6 +3,22 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-25
+
+- **Poster deadline extended to October 30, 2026**, confirmed against the live
+  PaperPlaza entry (Poster Paper: September 22 to October 30, status Submit).
+  Updated the site-wide Call for Posters strip, the home hero poster card, the
+  poster page notice, portal card and schedule table, and the Important Dates
+  notice and row. Both deadline tables show October 25 struck through with the
+  new date, matching how the earlier extensions were shown.
+- **The strip's self-hiding cutoff moved with it.** It was hardcoded to
+  2026-10-26T07:00:00Z and would have hidden the Call for Posters tonight while
+  submissions stayed open for another five days. Now 2026-10-31T07:00:00Z
+  (October 30, 23:59:59 Pacific, which is PDT here since DST ends November 1).
+- Added a dated announcement for the extension. The October 3 announcement
+  still reads "open until October 25"; it is left as the dated record it was,
+  the same way the August and September paper-deadline announcements were kept.
+
 ## 2026-10-22
 
 - **Rejected-paper authors must now submit a poster separately.** The page said
