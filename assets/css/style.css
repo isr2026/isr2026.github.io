@@ -419,6 +419,27 @@ del { color: var(--muted); text-decoration: line-through; }
 .date-table td:first-child { font-weight: 700; color: var(--deep-blue); white-space: nowrap; }
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md); }
 
+/* Registration fees: category rows down the side, fee stages across the top. */
+.fee-table th[scope="row"] {
+  background: var(--white);
+  color: var(--deep-blue);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.fee-table td { font-weight: 600; color: var(--deep-blue); }
+.fee-when {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+}
+
 /* Program at a glance: a time column plus one column per room. */
 .program-grid { min-width: 720px; }
 .program-grid th[scope="row"] {

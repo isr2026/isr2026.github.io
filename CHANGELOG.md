@@ -20,6 +20,21 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
   session-error page, so the date is shown on the button card itself and not
   only in the surrounding text.
 
+- **Fee table rebuilt from the live registration site.** The six figures sent
+  earlier were only part of it. Added three categories that were missing:
+  **NECA Member** (same as IEEE Member), **IEEE Life Member** (free) and
+  **Accompanying person** (10,000, flat across all three stages).
+- **Registration deadlines are no longer unknown.** Early Bird closes 23:59
+  JST on November 6, Regular 23:59 JST on November 20, and On-Site runs 08:30
+  December 2 to 18:00 December 4. These now appear in the fee table headers,
+  and the Important Dates page has a registration table in place of the
+  "to be announced" block it had carried since launch.
+- Added what registration includes (sessions, banquet, welcome party, coffee
+  breaks, lunch) and what an accompanying person gets — everything except
+  access to the sessions.
+- Noted that the Organizing Committee is not a registered Japanese invoice
+  issuer, so its receipts carry no Registration Number.
+
 ## 2026-10-25
 
 - **Program at a glance published** (`program.html`), from the Program Chair's

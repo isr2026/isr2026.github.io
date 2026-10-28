@@ -658,8 +658,40 @@ f"""
         <span class="kicker">Registration</span>
         <h2>Registration Deadlines</h2>
       </div>
-{tba('Author and early-bird registration deadlines will be published together with the registration fees.',
-     'See the <a href="registration.html">Registration</a> page.')}
+      <div class="table-wrap">
+        <table class="date-table">
+          <caption>Registration deadlines (Japan Standard Time)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Milestone</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>October 31, 2026</td>
+              <td>Online <a href="registration.html">registration</a> opens</td>
+              <td>Scheduled</td>
+            </tr>
+            <tr>
+              <td>November 6, 2026</td>
+              <td>Early-bird registration deadline (23:59 JST)</td>
+              <td>Scheduled</td>
+            </tr>
+            <tr>
+              <td>November 20, 2026</td>
+              <td>Regular registration deadline (23:59 JST)</td>
+              <td>Scheduled</td>
+            </tr>
+            <tr>
+              <td>December 2&ndash;4, 2026</td>
+              <td>On-site registration at INTEX Osaka</td>
+              <td>Scheduled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
   </main>
@@ -701,7 +733,7 @@ f"""
             We apologize for any confusion these changes may cause.
           </p>
           <p>
-            The early-bird registration deadline will be announced on this page once confirmed.
+            Registration deadlines are now confirmed and shown with the fees below.
           </p>
         </div>
       </div>
@@ -721,7 +753,8 @@ f"""
               delay.
             </p>
             <p>
-              The early-bird registration deadline will be announced here once it is confirmed.
+              Early-bird registration closes at <strong>23:59 JST on November 6, 2026</strong>, and
+              regular registration at <strong>23:59 JST on November 20, 2026</strong>.
             </p>
           </div>
         </div>
@@ -747,56 +780,108 @@ f"""
         <span class="kicker">Fees</span>
         <h2>Registration Fees</h2>
         <p>
-          All fees are shown in Japanese yen (JPY) and include applicable taxes. These figures
-          were revised on October 26, 2026.
+          All fees are shown in Japanese yen and include Japanese consumption tax. Deadlines are
+          Japan Standard Time.
         </p>
       </div>
 
       <div class="table-wrap">
-        <table class="date-table">
+        <table class="date-table fee-table">
           <caption>IEEE ISR/SIAS 2026 registration fees (JPY)</caption>
           <thead>
             <tr>
               <th scope="col">Category</th>
-              <th scope="col">Early</th>
-              <th scope="col">Regular</th>
-              <th scope="col">On-site</th>
+              <th scope="col">Early Bird<br /><span class="fee-when">on or before 23:59, November 6, 2026</span></th>
+              <th scope="col">Regular<br /><span class="fee-when">on or before 23:59, November 20, 2026</span></th>
+              <th scope="col">On-Site<br /><span class="fee-when">08:30 December 2 to 18:00 December 4, 2026</span></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>IEEE Member</td>
+              <th scope="row">IEEE Member</th>
               <td>&yen;70,000</td>
               <td>&yen;80,000</td>
               <td>&yen;80,000</td>
             </tr>
             <tr>
-              <td>Non-member</td>
+              <th scope="row">NECA Member</th>
+              <td>&yen;70,000</td>
+              <td>&yen;80,000</td>
+              <td>&yen;80,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Non-member</th>
               <td>&yen;85,000</td>
               <td>&yen;95,000</td>
               <td>&yen;95,000</td>
             </tr>
             <tr>
-              <td>IEEE Member (Student)</td>
+              <th scope="row">IEEE Life Member</th>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <th scope="row">IEEE Member (Student)</th>
               <td>&yen;35,000</td>
               <td>&yen;40,000</td>
               <td>&yen;40,000</td>
             </tr>
             <tr>
-              <td>Non-member (Student)</td>
+              <th scope="row">Non-member (Student)</th>
               <td>&yen;43,000</td>
               <td>&yen;48,000</td>
               <td>&yen;48,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Accompanying person</th>
+              <td colspan="3">&yen;10,000 &mdash; same at every stage</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style="color: var(--muted); font-size: 14px; margin-top: 14px;">
-        Early rates apply until the early registration deadline (to be announced). Regular rates
-        apply thereafter, and On-site rates apply to registration at the venue. Regular and On-site
-        are charged at the same amount.
+        Regular and On-Site registration are charged at the same amount.
       </p>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <article class="card">
+          <h3>What registration includes</h3>
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Access to all sessions</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Banquet</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Welcome party</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Coffee breaks and lunch</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Accompanying person</h3>
+          <p>&yen;10,000. Includes the social and catering program:</p>
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Banquet</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Welcome party</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span>Coffee breaks and lunch</span></li>
+          </ul>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            <strong>Does not include access to the sessions.</strong>
+          </p>
+        </article>
+      </div>
+
+      <div class="notice-box info" style="margin-top: 24px;">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div>
+          <strong>Receipts and the Japanese invoice system.</strong>
+          <p>
+            The IEEE ISR/SIAS 2026 Organizing Committee is not a registered invoice issuer, so
+            receipts issued by the committee do not carry a Registration Number.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
