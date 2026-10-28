@@ -15,6 +15,7 @@ CFP_PDF    = "assets/docs/ISRSIAS2026_cfp_2st.pdf"
 # Generic IEEE RAS PaperPlaza entry page. Replace with the conference-specific
 # URL when the Program Chair supplies it (see the note on the submission page).
 SUBMIT_URL = "https://ras.papercept.net/conferences/scripts/start.pl"
+REGISTRATION_URL = "https://amarys-jtb.jp/isr2026/"
 CONTACT_EMAIL = "M-isrsias2026-info-ml@aist.go.jp"
 
 NAV = [
@@ -674,13 +675,68 @@ f"""
   <main id="main">
 
     <section class="section">
+      <!--
+        ==========================================================================
+        WEB CHAIR NOTE - revised fees, 2026-10-26 (confirmed 2026-10-28)
+        Figures and notice wording supplied by the Program Chair, who then
+        confirmed two points: the IEEE Member (non-student) rate is unchanged
+        because the member rate is the baseline the others are set against,
+        and the structure is three tiers, Early / Regular / On-site, with
+        Regular and On-site priced the same.
+        REGISTRATION_URL is the JTB Amarys site. Before it opened it redirected
+        to a Japanese session-error page, which is why the opening date sits
+        next to the link.
+        ==========================================================================
+      -->
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>Online registration is not yet open.</strong>
+          <strong>Notice of Revised Registration Fees &mdash; October 26, 2026</strong>
           <p>
-            Registration fees are listed below. The early-bird deadline and the online
-            registration system will be announced on this page shortly.
+            The registration fees previously published on this page have been revised to reflect
+            IEEE requirements regarding member and non-member rates. Student registration fees have
+            also been revised. The updated fees are shown in the table below.
+          </p>
+          <p>
+            We apologize for any confusion these changes may cause.
+          </p>
+          <p>
+            The early-bird registration deadline will be announced on this page once confirmed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <div class="section-heading">
+            <span class="kicker">Register</span>
+            <h2>Online Registration</h2>
+          </div>
+          <div class="prose">
+            <p>
+              Registration is handled through the conference registration site, operated by JTB.
+              It is <strong>scheduled to open on October 31, 2026</strong>. We apologize for the
+              delay.
+            </p>
+            <p>
+              The early-bird registration deadline will be announced here once it is confirmed.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Registration site</h3>
+          <p>Opens <strong>October 31, 2026</strong>.</p>
+          <p>
+            <a class="btn btn-primary btn-lg btn-block" href="{REGISTRATION_URL}"
+               target="_blank" rel="noopener noreferrer">
+              Go to Registration &rarr;
+            </a>
+          </p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            <a href="{REGISTRATION_URL}" target="_blank" rel="noopener noreferrer">{REGISTRATION_URL}</a>
           </p>
         </div>
       </div>
@@ -691,8 +747,8 @@ f"""
         <span class="kicker">Fees</span>
         <h2>Registration Fees</h2>
         <p>
-          All fees are shown in Japanese yen (JPY) and include applicable taxes. The
-          early-bird registration deadline will be announced soon.
+          All fees are shown in Japanese yen (JPY) and include applicable taxes. These figures
+          were revised on October 26, 2026.
         </p>
       </div>
 
@@ -702,7 +758,8 @@ f"""
           <thead>
             <tr>
               <th scope="col">Category</th>
-              <th scope="col">Early-bird</th>
+              <th scope="col">Early</th>
+              <th scope="col">Regular</th>
               <th scope="col">On-site</th>
             </tr>
           </thead>
@@ -711,29 +768,34 @@ f"""
               <td>IEEE Member</td>
               <td>&yen;70,000</td>
               <td>&yen;80,000</td>
+              <td>&yen;80,000</td>
             </tr>
             <tr>
               <td>Non-member</td>
-              <td>&yen;80,000</td>
-              <td>&yen;90,000</td>
+              <td>&yen;85,000</td>
+              <td>&yen;95,000</td>
+              <td>&yen;95,000</td>
             </tr>
             <tr>
               <td>IEEE Member (Student)</td>
+              <td>&yen;35,000</td>
               <td>&yen;40,000</td>
-              <td>&yen;50,000</td>
+              <td>&yen;40,000</td>
             </tr>
             <tr>
               <td>Non-member (Student)</td>
-              <td>&yen;50,000</td>
-              <td>&yen;60,000</td>
+              <td>&yen;43,000</td>
+              <td>&yen;48,000</td>
+              <td>&yen;48,000</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style="color: var(--muted); font-size: 14px; margin-top: 14px;">
-        Early-bird rates apply until the early registration deadline (to be announced).
-        On-site rates apply thereafter, including registration at the venue.
+        Early rates apply until the early registration deadline (to be announced). Regular rates
+        apply thereafter, and On-site rates apply to registration at the venue. Regular and On-site
+        are charged at the same amount.
       </p>
     </section>
 

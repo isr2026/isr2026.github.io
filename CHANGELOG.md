@@ -3,6 +3,23 @@
 All notable changes to the IEEE ISR/SIAS 2026 website are recorded here.
 Newest entries first. Dates are in JST (YYYY-MM-DD).
 
+## 2026-10-28
+
+- **Registration fees revised**, with the notice wording supplied by the
+  Program Chair. Non-member rates rise (85,000 / 95,000) and both student
+  categories fall (35,000 / 40,000 and 43,000 / 48,000). The IEEE Member rate
+  is unchanged at 70,000 / 80,000 — it is the baseline the other categories
+  are set against, confirmed after the six supplied figures turned out not to
+  include it.
+- **Three fee tiers** instead of two: Early / Regular / On-site. Regular and
+  On-site are charged the same amount, which a footnote states so the two
+  identical columns do not read as a mistake.
+- **Registration site linked** — https://amarys-jtb.jp/isr2026/ (JTB Amarys),
+  with its October 31 opening date beside the link and the Program Chair's
+  apology for the delay. Before it opens the URL redirects to a Japanese
+  session-error page, so the date is shown on the button card itself and not
+  only in the surrounding text.
+
 ## 2026-10-25
 
 - **Program at a glance published** (`program.html`), from the Program Chair's
