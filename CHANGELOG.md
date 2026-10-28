@@ -35,6 +35,20 @@ Newest entries first. Dates are in JST (YYYY-MM-DD).
 - Noted that the Organizing Committee is not a registered Japanese invoice
   issuer, so its receipts carry no Registration Number.
 
+- **Accommodation page written** (`accommodation.html`), replacing the
+  "to be announced" block it had carried since launch. Kept short on purpose:
+  attendees are mostly domestic and do not need instructions on booking a
+  hotel in Osaka. Three options — walk from a bayside hotel, Bentencho (three
+  Chuo Line stops from Cosmosquare, no transfer), or the city centre at about
+  40 minutes. States plainly that no conference hotel block exists.
+  - Only two hotels are named, both checked against their own official sites:
+    Grand Prince Hotel Osaka Bay (~3 min walk) and ART HOTEL Osaka Bay Tower
+    (next to Bentencho Station).
+  - **Sakishima Cosmo Tower Hotel was deliberately left out.** Osaka
+    Prefecture has published a closure notice for it, even though INTEX
+    Osaka's own accommodation page still listed it. That page is down for
+    maintenance, so anything taken from it needs re-checking.
+
 ## 2026-10-25
 
 - **Program at a glance published** (`program.html`), from the Program Chair's
