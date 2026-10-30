@@ -286,6 +286,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-10-30">
+            <span class="announcement-date">October 30, 2026</span>
+            <a href="registration.html">
+              Registration is now open &mdash; early-bird rates until November 6, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-10-25">
             <span class="announcement-date">October 25, 2026</span>
             <a href="program.html">
@@ -670,9 +677,9 @@ f"""
           </thead>
           <tbody>
             <tr>
-              <td>October 31, 2026</td>
-              <td>Online <a href="registration.html">registration</a> opens</td>
-              <td>Scheduled</td>
+              <td>October 30, 2026</td>
+              <td>Online <a href="registration.html">registration</a> opens (12:00 JST)</td>
+              <td>Open</td>
             </tr>
             <tr>
               <td>November 6, 2026</td>
@@ -715,9 +722,12 @@ f"""
         because the member rate is the baseline the others are set against,
         and the structure is three tiers, Early / Regular / On-site, with
         Regular and On-site priced the same.
-        REGISTRATION_URL is the JTB Amarys site. Before it opened it redirected
-        to a Japanese session-error page, which is why the opening date sits
-        next to the link.
+        REGISTRATION_URL is the JTB Amarys site. It went live at 12:00 JST on
+        2026-10-30 (one day earlier than the October 31 the Program Chair had
+        first given); the Program Chair asked for the opening to be announced
+        the same morning. Verified live that afternoon - the JTB page itself
+        states "Registration From October 30 to November 20, 2026 in JST",
+        which matches the regular deadline in the table below.
         ==========================================================================
       -->
       <div class="notice-box">
@@ -749,8 +759,8 @@ f"""
           <div class="prose">
             <p>
               Registration is handled through the conference registration site, operated by JTB.
-              It is <strong>scheduled to open on October 31, 2026</strong>. We apologize for the
-              delay.
+              The site <strong>opened at 12:00 JST on October 30, 2026</strong> and is now
+              accepting registrations.
             </p>
             <p>
               Early-bird registration closes at <strong>23:59 JST on November 6, 2026</strong>, and
@@ -761,7 +771,8 @@ f"""
 
         <div class="card">
           <h3>Registration site</h3>
-          <p>Opens <strong>October 31, 2026</strong>.</p>
+          <p class="status-label is-open">&#9679; Open now</p>
+          <p>Open since <strong>12:00 JST, October 30, 2026</strong>.</p>
           <p>
             <a class="btn btn-primary btn-lg btn-block" href="{REGISTRATION_URL}"
                target="_blank" rel="noopener noreferrer">
@@ -889,7 +900,7 @@ f"""
         <div class="notice-icon" aria-hidden="true">i</div>
         <div>
           <strong>At least one author of each accepted paper is normally required to register.</strong>
-          <p>Exact requirements will be confirmed when registration opens.</p>
+          <p>Please follow the guidance given on the registration site.</p>
         </div>
       </div>
     </section>

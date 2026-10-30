@@ -723,6 +723,9 @@ details p { color: var(--muted); margin: 12px 0 0; }
 .poster-cta-photo { width: 100%; height: auto; aspect-ratio: 16 / 7; object-fit: cover; object-position: center 40%; }
 .poster-cta-body { padding: 22px 26px 24px; }
 .poster-cta .status-label { background: #e7f6ee; color: var(--success); margin-bottom: 12px; }
+
+/* Green pill for a thing that is open right now, outside the poster card. */
+.status-label.is-open { background: #e7f6ee; color: var(--success); }
 .poster-cta h2 { color: var(--deep-blue); font-size: 26px; margin: 0 0 6px; }
 .poster-cta p { color: var(--muted); }
 .poster-cta .poster-cta-deadline { font-size: 17px; margin: 0 0 10px; color: var(--text); }
