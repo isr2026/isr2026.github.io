@@ -287,6 +287,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-11-06">
+            <span class="announcement-date">November 6, 2026</span>
+            <a href="registration.html">
+              Early-bird registration extended to November 13, 2026
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-11-05">
             <span class="announcement-date">November 5, 2026</span>
             <a href="poster.html">
@@ -297,7 +304,7 @@ f"""
           <li class="announcement-item" data-date="2026-10-30">
             <span class="announcement-date">October 30, 2026</span>
             <a href="registration.html">
-              Registration is now open &mdash; early-bird rates until November 6, 2026
+              Registration is now open &mdash; the JTB registration site is live
             </a>
           </li>
 
@@ -690,9 +697,9 @@ f"""
               <td>Open</td>
             </tr>
             <tr>
-              <td>November 6, 2026</td>
+              <td><span class="date-old">November 6, 2026</span><br /><span class="date-new">November 13, 2026</span></td>
               <td>Early-bird registration deadline (23:59 JST)</td>
-              <td>Scheduled</td>
+              <td>Extended</td>
             </tr>
             <tr>
               <td>November 20, 2026</td>
@@ -736,6 +743,14 @@ f"""
         the same morning. Verified live that afternoon - the JTB page itself
         states "Registration From October 30 to November 20, 2026 in JST",
         which matches the regular deadline in the table below.
+
+        EARLY BIRD EXTENDED, 2026-11-06. The JTB guide page (RegGuide_v3.aspx)
+        contradicted itself on the night of the old deadline: its fee table and
+        its "Deadline for Registration" section said November 13, while its
+        "Payment Procedure" and "Cancellation Fee" sections still said
+        November 6. The Program Chair confirmed November 13 is correct. The
+        payment and cancellation blocks on JTB's own page were still showing
+        November 6 when this was published - that page is JTB's, not ours.
         ==========================================================================
       -->
       <div class="notice-box">
@@ -771,8 +786,9 @@ f"""
               accepting registrations.
             </p>
             <p>
-              Early-bird registration closes at <strong>23:59 JST on November 6, 2026</strong>, and
-              regular registration at <strong>23:59 JST on November 20, 2026</strong>.
+              Early-bird registration has been <strong>extended to 23:59 JST on November 13,
+              2026</strong>, and regular registration closes at
+              <strong>23:59 JST on November 20, 2026</strong>.
             </p>
           </div>
         </div>
@@ -810,7 +826,7 @@ f"""
           <thead>
             <tr>
               <th scope="col">Category</th>
-              <th scope="col">Early Bird<br /><span class="fee-when">on or before 23:59, November 6, 2026</span></th>
+              <th scope="col">Early Bird<br /><span class="fee-when">on or before 23:59, November 13, 2026</span></th>
               <th scope="col">Regular<br /><span class="fee-when">on or before 23:59, November 20, 2026</span></th>
               <th scope="col">On-Site<br /><span class="fee-when">08:30 December 2 to 18:00 December 4, 2026</span></th>
             </tr>
