@@ -56,7 +56,13 @@
             <a href="poster.html">Poster Presentation</a>
           </div>
         </div>
-        <a href="program.html" aria-current="page">Program</a>
+        <div class="nav-group">
+          <button type="button" class="nav-toggle is-active" aria-expanded="false" aria-controls="navmenu-program">Program<span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="nav-menu" id="navmenu-program">
+            <a href="program.html" aria-current="page">Program at a Glance</a>
+            <a href="presentation.html">Presentation Guidelines</a>
+          </div>
+        </div>
         <div class="nav-group">
           <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="navmenu-venue">Venue<span class="nav-caret" aria-hidden="true"></span></button>
           <div class="nav-menu" id="navmenu-venue">
@@ -90,11 +96,15 @@
       Session labels only (A11, B21, ...). Paper titles and authors are not in
       that file and are still to come; the notice below says so.
 
-      Two things in the source grid to re-check with the Program Chair if the
-      displayed times look wrong:
-        - The time column skips 16:40 (it runs ... 16:00, 16:20, 17:00 ...),
-          which is why Dec 2 Poster Session 1 reads 16:00-17:20 and the Dec 3
-          afternoon break reads 16:20-17:00.
+      The source grid's time column skips 16:40, so Dec 2 Poster Session 1 was
+      generated as 16:00-17:20. The Program Chair corrected it to 16:00-17:00
+      on 2026-11-08, which also makes it the same length as Poster Session 2
+      (15:20-16:20). That row no longer matches the workbook: keep this
+      correction if the grid is ever regenerated from r6.
+
+      Still unresolved in the source grid, to re-check with the Program Chair:
+        - The Dec 3 afternoon break reads 16:20-17:00, i.e. 40 minutes, from
+          the same skipped 16:40 row.
         - December 4 has nothing between 12:00 and 12:40, where the combined
           Lunch / Award / Closing block starts.
       ==========================================================================
@@ -150,7 +160,7 @@
               <td colspan="4" class="slot-break">Break</td>
             </tr>
             <tr>
-              <th scope="row">16:00&ndash;17:20</th>
+              <th scope="row">16:00&ndash;17:00</th>
               <td></td>
               <td></td>
               <td>Poster Session 1</td>
@@ -291,7 +301,8 @@
           <h3>Poster sessions</h3>
           <p>
             Two poster sessions are held in the Conference Hall, on December 2 and December 3.
-            See the <a href="poster.html">poster page</a> for submission and presentation details.
+            See <a href="presentation.html">presentation guidelines</a> for poster size, and the
+            <a href="poster.html">poster page</a> for submission.
           </p>
         </article>
         <article class="card">
@@ -316,6 +327,7 @@
         <li><a href="submission.html">Submission</a></li>
         <li><a href="poster.html">Poster</a></li>
         <li><a href="program.html">Program</a></li>
+        <li><a href="presentation.html">Presentation</a></li>
         <li><a href="venue.html">Venue</a></li>
         <li><a href="accommodation.html">Accommodation</a></li>
         <li><a href="committee.html">Committee</a></li>

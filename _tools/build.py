@@ -26,6 +26,7 @@ NAV = [
     ("submission.html",   "Submission"),
     ("poster.html",       "Poster"),
     ("program.html",      "Program"),
+    ("presentation.html", "Presentation"),
     ("venue.html",        "Venue"),
     ("accommodation.html","Accommodation"),
     ("committee.html",    "Committee"),
@@ -43,7 +44,8 @@ HEADER_NAV = [
     ("registration.html", "Registration",     None),
     (None,                "Submission",       [("submission.html",   "Paper Submission"),
                                                ("poster.html",       "Poster Presentation")]),
-    ("program.html",      "Program",          None),
+    (None,                "Program",          [("program.html",      "Program at a Glance"),
+                                               ("presentation.html", "Presentation Guidelines")]),
     (None,                "Venue",            [("venue.html",        "Venue & Access"),
                                                ("accommodation.html","Accommodation")]),
     ("contact.html",      "Contact",          None),
@@ -1396,7 +1398,10 @@ f"""
         <article class="card">
           <h3>Poster size</h3>
           <p><strong>A0, one sheet</strong> per contribution.</p>
-          <p style="color: var(--muted); font-size: 14px;">841 &times; 1189 mm. Agreed with INTEX Osaka.</p>
+          <p style="color: var(--muted); font-size: 14px;">
+            841 &times; 1189 mm, on a 900 mm wide board. Agreed with INTEX Osaka.
+            More in the <a href="presentation.html">presentation guidelines</a>.
+          </p>
         </article>
 
         <article class="card">
@@ -1523,11 +1528,15 @@ f"""
       Session labels only (A11, B21, ...). Paper titles and authors are not in
       that file and are still to come; the notice below says so.
 
-      Two things in the source grid to re-check with the Program Chair if the
-      displayed times look wrong:
-        - The time column skips 16:40 (it runs ... 16:00, 16:20, 17:00 ...),
-          which is why Dec 2 Poster Session 1 reads 16:00-17:20 and the Dec 3
-          afternoon break reads 16:20-17:00.
+      The source grid's time column skips 16:40, so Dec 2 Poster Session 1 was
+      generated as 16:00-17:20. The Program Chair corrected it to 16:00-17:00
+      on 2026-11-08, which also makes it the same length as Poster Session 2
+      (15:20-16:20). That row no longer matches the workbook: keep this
+      correction if the grid is ever regenerated from r6.
+
+      Still unresolved in the source grid, to re-check with the Program Chair:
+        - The Dec 3 afternoon break reads 16:20-17:00, i.e. 40 minutes, from
+          the same skipped 16:40 row.
         - December 4 has nothing between 12:00 and 12:40, where the combined
           Lunch / Award / Closing block starts.
       ==========================================================================
@@ -1583,7 +1592,7 @@ f"""
               <td colspan="4" class="slot-break">Break</td>
             </tr>
             <tr>
-              <th scope="row">16:00&ndash;17:20</th>
+              <th scope="row">16:00&ndash;17:00</th>
               <td></td>
               <td></td>
               <td>Poster Session 1</td>
@@ -1724,7 +1733,8 @@ f"""
           <h3>Poster sessions</h3>
           <p>
             Two poster sessions are held in the Conference Hall, on December 2 and December 3.
-            See the <a href="poster.html">poster page</a> for submission and presentation details.
+            See <a href="presentation.html">presentation guidelines</a> for poster size, and the
+            <a href="poster.html">poster page</a> for submission.
           </p>
         </article>
         <article class="card">
@@ -1734,6 +1744,164 @@ f"""
             Details will follow with the detailed program.
           </p>
         </article>
+      </div>
+    </section>
+
+  </main>
+""")
+
+# ---------------------------------------------------------------- Presentation
+
+write("presentation.html", "Presentation Guidelines",
+      f"How to prepare your oral or poster presentation for {CONF_TITLE}.",
+hero("Presentation", "Presentation Guidelines",
+     "What to prepare for your oral or poster presentation at INTEX Osaka.") +
+f"""
+  <main id="main">
+
+    <!--
+      ==========================================================================
+      WEB CHAIR NOTE - presentation guidelines
+      Created 2026-11-08 at the Program Chair's request: a single page covering
+      preparation for both oral and poster presentations, to sit beside the
+      program. They will send the rest of the content as it is confirmed, so
+      this page is deliberately a frame with the confirmed facts in it.
+
+      CONFIRMED so far:
+        - Oral: 15 minutes presentation, 5 minutes Q&A (Program Chair,
+          2026-11-08).
+        - Poster: A0, one sheet, agreed with INTEX Osaka (General Chair,
+          2026-10-03). Repeated here from poster.html at the Program Chair's
+          request - if one changes, change both.
+        - Poster boards are 900 mm wide (confirmed in the committee thread,
+          2026-11-05). Portrait orientation follows from that: a landscape A0
+          is 1189 mm wide and would not fit. That inference is ours, not a
+          committee statement, so it is worded as a consequence of the board
+          width rather than as a rule.
+
+      NOT yet confirmed - do not invent: projector connections and adapters,
+      slide format and aspect ratio, whether presenters use their own laptop,
+      when and where to load slides, poster mounting and removal times, and
+      whether pins or tape are provided.
+      ==========================================================================
+    -->
+
+    <section class="section">
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div>
+          <strong>This page is being completed.</strong>
+          <p>
+            Presentation times and poster size are confirmed and shown below. The remaining
+            practical details &mdash; equipment in the session rooms, slide formats, and poster
+            mounting times &mdash; will be added here as the Program Committee confirms them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Oral</span>
+        <h2>Oral Presentations</h2>
+        <p>
+          Oral sessions run in parallel in Room A and Room B. See the
+          <a href="program.html">program at a glance</a> for the session structure.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Your slot</h3>
+          <p><strong>20 minutes</strong> in total.</p>
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>15 minutes</strong> presentation</span></li>
+            <li><span class="check" aria-hidden="true">&#10003;</span><span><strong>5 minutes</strong> questions and discussion</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Still to be announced</h3>
+          <p style="color: var(--muted); font-size: 15px;">
+            Equipment in the session rooms, video connections and adapters, the slide format to
+            bring, and when to load your presentation.
+          </p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            These will be published on this page.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Registration</h3>
+          <p>
+            At least one author of each accepted paper must
+            <a href="registration.html">register</a> under a non-student category.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Poster</span>
+        <h2>Poster Presentations</h2>
+        <p>
+          Two poster sessions are held in the Conference Hall, on December 2 and December 3.
+          Presenters bring and mount their own poster and stand with it during the session.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Poster size</h3>
+          <p><strong>A0, one sheet</strong> per contribution.</p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            841 &times; 1189 mm. Agreed with INTEX Osaka.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Board width</h3>
+          <p>The poster boards are <strong>900 mm wide</strong>.</p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            An A0 sheet in portrait orientation fits. Landscape A0 is 1189 mm wide and does not.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Bring your own poster</h3>
+          <p>The poster is not uploaded and not printed for you. Print it in advance and bring it
+             with you.</p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            Mounting and removal times will be announced here.
+          </p>
+        </article>
+      </div>
+
+      <div class="notice-box info" style="margin-top: 24px;">
+        <div class="notice-icon" aria-hidden="true">i</div>
+        <div>
+          <strong>Submitting a poster is a separate step.</strong>
+          <p>
+            Abstracts go through IEEE RAS PaperPlaza. See
+            <a href="poster.html">Poster Presentation</a> for the submission procedure and the
+            deadline.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Questions</span>
+        <h2>Who to Ask</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Questions about presenting at the conference can be sent to
+          <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>. See also the
+          <a href="contact.html">contact page</a>.
+        </p>
       </div>
     </section>
 
