@@ -451,7 +451,7 @@ del { color: var(--muted); text-decoration: line-through; }
   font-weight: 700;
   white-space: nowrap;
 }
-.program-grid td { text-align: center; font-weight: 600; color: var(--deep-blue); }
+.program-grid td { text-align: left; font-weight: 600; color: var(--deep-blue); }
 .program-grid td:empty::after { content: "\00b7"; color: var(--border); }
 .program-grid .slot-break {
   background: var(--light-bg);
