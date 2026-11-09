@@ -1770,6 +1770,10 @@ f"""
       CONFIRMED so far:
         - Oral: 15 minutes presentation, 5 minutes Q&A (Program Chair,
           2026-11-08).
+        - Oral: the session rooms have a projector with an HDMI connection
+          (Program Chair, 2026-11-09). The line about bringing an adapter is
+          ours, not theirs - it follows from HDMI being the connection on
+          offer, and is harmless if the venue turns out to supply adapters.
         - Poster: A0, one sheet, agreed with INTEX Osaka (General Chair,
           2026-10-03). Repeated here from poster.html at the Program Chair's
           request - if one changes, change both.
@@ -1779,10 +1783,10 @@ f"""
           committee statement, so it is worded as a consequence of the board
           width rather than as a rule.
 
-      NOT yet confirmed - do not invent: projector connections and adapters,
-      slide format and aspect ratio, whether presenters use their own laptop,
-      when and where to load slides, poster mounting and removal times, and
-      whether pins or tape are provided.
+      NOT yet confirmed - do not invent: slide format and aspect ratio,
+      whether a shared presentation computer is provided or presenters use
+      their own laptop, when and where to load slides, poster mounting and
+      removal times, and whether pins or tape are provided.
       ==========================================================================
     -->
 
@@ -1810,7 +1814,7 @@ f"""
         </p>
       </div>
 
-      <div class="grid-3">
+      <div class="grid-2">
         <article class="card">
           <h3>Your slot</h3>
           <p><strong>20 minutes</strong> in total.</p>
@@ -1821,10 +1825,18 @@ f"""
         </article>
 
         <article class="card">
+          <h3>In the session room</h3>
+          <p>A projector with an <strong>HDMI connection</strong> is provided.</p>
+          <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            If your laptop has no HDMI port, bring your own adapter.
+          </p>
+        </article>
+
+        <article class="card">
           <h3>Still to be announced</h3>
           <p style="color: var(--muted); font-size: 15px;">
-            Equipment in the session rooms, video connections and adapters, the slide format to
-            bring, and when to load your presentation.
+            The slide format to bring, whether a shared presentation computer is available, and
+            when to load your presentation.
           </p>
           <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
             These will be published on this page.
