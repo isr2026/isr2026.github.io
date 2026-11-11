@@ -26,6 +26,7 @@ NAV = [
     ("submission.html",   "Submission"),
     ("poster.html",       "Poster"),
     ("program.html",      "Program"),
+    ("plenary.html",      "Plenary Talks"),
     ("presentation.html", "Presentation"),
     ("venue.html",        "Venue"),
     ("accommodation.html","Accommodation"),
@@ -45,6 +46,7 @@ HEADER_NAV = [
     (None,                "Submission",       [("submission.html",   "Paper Submission"),
                                                ("poster.html",       "Poster Presentation")]),
     (None,                "Program",          [("program.html",      "Program at a Glance"),
+                                               ("plenary.html",      "Plenary Talks"),
                                                ("presentation.html", "Presentation Guidelines")]),
     (None,                "Venue",            [("venue.html",        "Venue & Access"),
                                                ("accommodation.html","Accommodation")]),
@@ -1534,9 +1536,15 @@ f"""
       (15:20-16:20). That row no longer matches the workbook: keep this
       correction if the grid is ever regenerated from r6.
 
+      The Dec 3 afternoon rows were the same skipped-16:40 fault: the grid gave
+      a 40-minute break 16:20-17:00 and Plenary Talk 1 at 17:00-18:00. The
+      General Chair's own Plenary Talk 1 manuscript, sent 2026-11-11 for
+      publication, states 16:40-17:40, so the break is 16:20-16:40 (the same
+      20 minutes as every other break) and the talk 16:40-17:40 (the same hour
+      as Plenary Talk 2). Changed here to match the manuscript; plenary.html is
+      generated from that manuscript, so the two pages must not drift apart.
+
       Still unresolved in the source grid, to re-check with the Program Chair:
-        - The Dec 3 afternoon break reads 16:20-17:00, i.e. 40 minutes, from
-          the same skipped 16:40 row.
         - December 4 has nothing between 12:00 and 12:40, where the combined
           Lunch / Award / Closing block starts.
       ==========================================================================
@@ -1661,14 +1669,14 @@ f"""
               <td></td>
             </tr>
             <tr>
-              <th scope="row">16:20&ndash;17:00</th>
+              <th scope="row">16:20&ndash;16:40</th>
               <td colspan="4" class="slot-break">Break</td>
             </tr>
             <tr>
-              <th scope="row">17:00&ndash;18:00</th>
+              <th scope="row">16:40&ndash;17:40</th>
               <td></td>
               <td></td>
-              <td>Plenary Talk 1</td>
+              <td><a href="plenary.html#talk1">Plenary Talk 1</a></td>
               <td></td>
             </tr>
             <tr>
@@ -1694,7 +1702,7 @@ f"""
               <th scope="row">09:20&ndash;10:20</th>
               <td></td>
               <td></td>
-              <td>Plenary Talk 2</td>
+              <td><a href="plenary.html#talk2">Plenary Talk 2</a></td>
               <td></td>
             </tr>
             <tr>
@@ -1721,7 +1729,15 @@ f"""
     </section>
 
     <section class="section">
-      <div class="grid-3">
+      <div class="grid-2">
+        <article class="card">
+          <h3>Plenary talks</h3>
+          <p>
+            Two plenary talks in the Conference Hall, on December 3 and December 4.
+            Titles, speakers and abstracts are on the
+            <a href="plenary.html">plenary talks page</a>.
+          </p>
+        </article>
         <article class="card">
           <h3>Parallel sessions</h3>
           <p>
@@ -1744,6 +1760,285 @@ f"""
             Details will follow with the detailed program.
           </p>
         </article>
+      </div>
+    </section>
+
+  </main>
+""")
+
+# ---------------------------------------------------------------- Plenary talks
+
+write("plenary.html", "Plenary Talks",
+      f"Plenary talks, speakers and abstracts for {CONF_TITLE}.",
+hero("Program", "Plenary Talks",
+     "Two plenary talks in the Conference Hall at INTEX Osaka.") +
+f"""
+  <main id="main">
+
+    <!--
+      ==========================================================================
+      WEB CHAIR NOTE - plenary talks
+      Created 2026-11-11 from the two manuscripts the General Chair sent for
+      publication (3_8_PlenaryTalk1.docx, 3_8_PlenaryTalk2.docx). Titles,
+      times, chairs, affiliations, biographies and abstracts below are their
+      text, reflowed into HTML and not rewritten. If a correction is needed,
+      correct it against those files.
+
+      Speaker photographs come from the same two files
+      (assets/img/plenary-pilz.jpg, assets/img/plenary-mukaidono.jpg; the
+      second was converted from PNG to JPEG to cut its weight). They were
+      supplied for publication on this site.
+
+      Times here are the manuscripts' own: Talk 1 on December 3, 16:40-17:40;
+      Talk 2 on December 4, 09:20-10:20. Talk 1 did NOT match the program
+      grid, which had 17:00-18:00 after a 40-minute break - a known fault from
+      the workbook's skipped 16:40 row. program.html was changed to agree with
+      the manuscript, so if the Program Chair restores 17:00-18:00, change
+      both pages, not one.
+
+      The order of the awards and the "many other honors and awards" line in
+      Talk 2 are as written by the General Chair; the honours are listed in
+      the manuscript's order, not reordered by us.
+      ==========================================================================
+    -->
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Overview</span>
+        <h2>Two Plenary Talks</h2>
+        <p>
+          Both plenary talks are held in the <a href="venue.html">Conference Hall</a> at INTEX
+          Osaka. Times are local (Japan Standard Time). See the
+          <a href="program.html">program at a glance</a> for the full schedule.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3><a href="#talk1">Plenary Talk 1</a></h3>
+          <p><strong>A European View on Humanoid Safety and Security</strong></p>
+          <p style="color: var(--muted); font-size: 15px; margin-bottom: 0;">
+            Thomas Pilz, Pilz GmbH &amp; Co. KG<br />
+            Thursday, December 3, 2026 &middot; 16:40&ndash;17:40
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><a href="#talk2">Plenary Talk 2</a></h3>
+          <p><strong>Toward the Establishment of Positive Safety</strong></p>
+          <p style="color: var(--muted); font-size: 15px; margin-bottom: 0;">
+            Masao Mukaidono, IGSAP &middot; Meiji University<br />
+            Friday, December 4, 2026 &middot; 09:20&ndash;10:20
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="talk1">
+      <div class="section-heading">
+        <span class="kicker">Plenary Talk 1</span>
+        <h2>A European View on Humanoid Safety and Security</h2>
+      </div>
+
+      <ul class="plenary-meta">
+        <li><strong>Thursday, December 3, 2026</strong></li>
+        <li>16:40&ndash;17:40</li>
+        <li>Conference Hall</li>
+        <li>Chair: Kazutsugu Suita, Daido University, Japan</li>
+      </ul>
+
+      <div class="plenary-speaker">
+        <figure class="plenary-photo">
+          <img src="assets/img/plenary-pilz.jpg" width="275" height="413"
+               alt="Thomas Pilz" loading="lazy" />
+        </figure>
+        <div class="plenary-bio">
+          <h3 class="name">Thomas Pilz</h3>
+          <p class="affil">Pilz GmbH &amp; Co. KG, Managing Partner</p>
+
+          <h4>Professional background</h4>
+          <ul>
+            <li><strong>1995</strong> &mdash; Degree in Business Administration, University of Passau</li>
+            <li><strong>1996</strong> &mdash; Responsible for Pilz Automation Safety L.P.</li>
+            <li><strong>2005</strong> &mdash; Managing Partner of Pilz GmbH &amp; Co. KG</li>
+          </ul>
+
+          <h4>Fields of specialization</h4>
+          <ul>
+            <li>Functional safety and safe automation</li>
+            <li>Industrial security</li>
+            <li>Research and development in automation technology</li>
+            <li>Artificial intelligence for safety-critical applications</li>
+            <li>Standardization and regulatory frameworks</li>
+            <li>Autonomous industrial systems</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose plenary-abstract">
+        <h3>Abstract</h3>
+        <p>
+          Humanoid Robotics as well as Service Robotics has its roots in Japan, Korea and China.
+          Here researchers enjoyed the freedom and marketplace to introduce a new species of
+          robots. The key enabler of this technology is so-called autonomy and the ability to
+          integrate artificial intelligence into a machine that allows the machine to adapt to the
+          environment it is put in. As a result, we see how robots can climb mountains carrying an
+          egg or a watermelon, how robots do 100-meter sprints or support a customer at check in in
+          a hotel or when ordering a meal in a restaurant.
+        </p>
+        <p>
+          All this progress is intended to increase the well-being of us humans. So far so good
+          &mdash; but how about Safety? How about Security? How about regulations for those that
+          develop and use such machines? These questions have heavily influenced the progress of
+          this technology in Europe. Here the approach &ldquo;regulate first, develop later&rdquo;
+          has generated a list of European laws that now make those who develop for the European
+          Market rethink the value of Safety and Security. With safety, we have had good experience
+          in Europe, whether it is in the public sector, the agricultural sector, the medical sector
+          or the industrial sector. We have learned how to meet the requirement that a machine shall
+          not harm a human, intentionally or accidentally. We have developed concepts to allow us to
+          operate industrial robots safely, resulting in well-being at the workplace.
+        </p>
+        <p>
+          But how about AI and Safety? How about Safety when you cannot calculate anymore the
+          percentage of an undetected dangerous failure, because humans do not understand how AI
+          comes to its results? This is a huge challenge when one knows that stability of a
+          two-legged humanoid, a safety function, today is only possible when AI is used. But only
+          in Europe because there NIS 2, AI Act, CRA and Machine Safety Act give the legal framework
+          that needs to be followed when developing and bringing autonomous products to market like
+          Service Robots, whether they have the humanoid form or the shape of an animal or a sweet
+          little scooter.
+        </p>
+        <p>
+          International Standards are being drafted as we speak in order to give manufacturers and
+          developers guidance on how to meet legal compliance. Once met, we can again rest assured
+          that we have safe machines surrounding us in public life and work life with the
+          expectation of safety fostering well-being.
+        </p>
+        <p>
+          With this achievement we now need to look at Security &mdash; the only protection against
+          malicious humans who want to destroy the wealth and well-being of modern digital
+          societies. Here is the true challenge to keep humans secure so well-being can prosper!
+        </p>
+        <p>
+          The European answer to this is NIS2 and CRA. For the developer, it means that now Security
+          and its effects of availability and reaction times need to be considered. A challenge that
+          used to be the challenge of Safety alone.
+        </p>
+        <p>
+          Now Safety has a running mate: Security. Only with both functions implemented properly can
+          we trust that the new era of autonomous machines will promise safety and well-being to
+          society as a whole.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="talk2">
+      <div class="section-heading">
+        <span class="kicker">Plenary Talk 2</span>
+        <h2>Toward the Establishment of Positive Safety</h2>
+      </div>
+
+      <ul class="plenary-meta">
+        <li><strong>Friday, December 4, 2026</strong></li>
+        <li>09:20&ndash;10:20</li>
+        <li>Conference Hall</li>
+        <li>Chair: Tamio Tanikawa, AIST, Japan</li>
+      </ul>
+
+      <div class="plenary-speaker">
+        <figure class="plenary-photo">
+          <img src="assets/img/plenary-mukaidono.jpg" width="309" height="413"
+               alt="Masao Mukaidono" loading="lazy" />
+        </figure>
+        <div class="plenary-bio">
+          <h3 class="name">Masao Mukaidono</h3>
+          <p class="affil">
+            The Institute of Global Safety Promotion (IGSAP), Honorary Chairman<br />
+            Meiji University, Professor Emeritus<br />
+            Railway Technical Research Institute, Chairman
+          </p>
+
+          <h4>Professional background</h4>
+          <ul>
+            <li><strong>1989</strong> &mdash; Professor, Department of Information Science, School of
+                Science and Technology, Meiji University</li>
+            <li><strong>2013</strong> &mdash; Professor Emeritus, Meiji University (current)</li>
+            <li><strong>2014</strong> &mdash; Advisor, Meiji University (current)</li>
+          </ul>
+
+          <h4>Honors and awards</h4>
+          <ul>
+            <li><strong>2006</strong> &mdash; Distinguished Service Award from the Minister of
+                Health, Labour and Welfare</li>
+            <li><strong>2015</strong> &mdash; Reliability Engineering Award, IEEE Reliability Society
+                Japan Chapter</li>
+            <li><strong>2015</strong> &mdash; Prime Minister&rsquo;s Award for Distinguished Safety
+                Service</li>
+            <li><strong>2021</strong> &mdash; The Order of the Sacred Treasure, Gold Rays with Neck
+                Ribbon</li>
+          </ul>
+          <p class="plenary-more">He has received many other honors and awards.</p>
+
+          <h4>Fields of specialization</h4>
+          <ul>
+            <li>Safety studies &mdash; machine safety, product safety, occupational safety and
+                consumer safety</li>
+            <li>Informatics &mdash; fuzzy theory, artificial intelligence and informatics
+                education</li>
+            <li>Logic &mdash; mathematical logic, many-valued logic and fuzzy logic</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose plenary-abstract">
+        <h3>Abstract</h3>
+        <p>
+          Safety activities, including those in occupational safety and health, have traditionally
+          focused on reducing risks and preventing accidents through technical, organizational, and
+          human approaches. These efforts seek to reduce undesirable outcomes, representing a
+          movement from negative conditions toward zero. Although positive approaches have also been
+          pursued in safety practice, this lecture proposes the concept of &ldquo;Positive
+          Safety&rdquo; as a framework that integrates both approaches.
+        </p>
+        <p>
+          In this lecture, safety activities aimed at reducing hazards and risks are termed
+          &ldquo;Foundational Safety,&rdquo; while those aimed at creating desirable conditions and
+          values are termed &ldquo;Creative Safety.&rdquo; Specifically, Creative Safety seeks to
+          create conditions through safety activities in which people can exercise their abilities
+          with a sense of agency, grow, experience peace of mind, and find fulfillment in their
+          work. This represents a movement from zero toward positive conditions. Here,
+          &ldquo;zero&rdquo; is a conceptual reference point indicating a state in which the risk of
+          harm is at an acceptable level; it does not mean zero risk. This lecture proposes a
+          systematic framework for Positive Safety that integrates Foundational Safety and Creative
+          Safety.
+        </p>
+        <p>
+          Positive Safety expands the concept of safety in two directions. The first incorporates
+          Creative Safety alongside Foundational Safety. The second broadens its scope from physical
+          safety to four domains of safety-related value: safety, health, peace of mind, and
+          well-being, with physical safety as their foundation.
+        </p>
+        <p>
+          While individual technologies that enhance positive outcomes are advancing, further
+          research is needed to develop a framework for integrating, designing, and evaluating them
+          from the perspective of Positive Safety. Rapid advances in information and communication
+          technology (ICT) offer new opportunities to pursue this research. In this context,
+          Collaborative Safety provides an important link to Positive Safety. It seeks to ensure
+          safety through mutual information sharing and coordination among humans, machines, and
+          their environment, and is addressed in the recently published IEC Guide 127:2026. For
+          example, human&ndash;robot collaboration can reduce hazards while also enhancing
+          people&rsquo;s freedom of action and agency.
+        </p>
+        <p>
+          The ultimate purpose of safety is to enable people to work and live in a safe environment,
+          in good health, with peace of mind, and with a sense of happiness and well-being.
+          Developing technologies for Positive Safety has the potential to enhance workers&rsquo;
+          well-being while contributing to both safety and productivity.
+        </p>
+        <p class="plenary-keywords">
+          <strong>Keywords:</strong> positive safety, collaborative safety, foundational safety,
+          creative safety, peace of mind, well-being
+        </p>
       </div>
     </section>
 

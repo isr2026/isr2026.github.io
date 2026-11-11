@@ -460,6 +460,72 @@ del { color: var(--muted); text-decoration: line-through; }
   font-style: italic;
 }
 
+/* ===== Plenary talks =====
+   A row of facts (date, time, room, chair), then the speaker's photograph
+   beside their biography, then the abstract in a reading column. */
+
+.plenary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+}
+.plenary-meta li {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+.plenary-meta li strong { color: var(--deep-blue); }
+
+.plenary-speaker {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.plenary-photo { margin: 0; }
+.plenary-photo img {
+  width: 100%;
+  height: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.plenary-bio .name { margin: 0 0 6px; color: var(--deep-blue); font-size: 23px; }
+.plenary-bio .affil { margin: 0 0 20px; color: var(--muted); font-size: 15px; }
+.plenary-bio h4 {
+  margin: 20px 0 8px;
+  color: var(--ieee-blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.plenary-bio ul { margin: 0; padding-left: 20px; font-size: 15px; }
+.plenary-bio li { margin-bottom: 5px; }
+.plenary-bio li strong { color: var(--deep-blue); }
+.plenary-more { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+.plenary-abstract { margin-top: 32px; }
+.plenary-abstract h3 {
+  margin-top: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.plenary-keywords { color: var(--muted); font-size: 14px; }
+.plenary-keywords strong { color: var(--deep-blue); }
+
+@media (max-width: 620px) {
+  .plenary-speaker { grid-template-columns: 1fr; gap: 20px; }
+  .plenary-photo img { max-width: 210px; }
+}
+
 /* ===== Notices ===== */
 
 .notice-box {
