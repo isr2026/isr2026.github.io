@@ -453,6 +453,15 @@ del { color: var(--muted); text-decoration: line-through; }
 }
 .program-grid td { text-align: left; font-weight: 600; color: var(--deep-blue); }
 .program-grid td:empty::after { content: "\00b7"; color: var(--border); }
+.program-grid td a { color: var(--ieee-blue); }
+.program-grid .session-code {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
 .program-grid .slot-break {
   background: var(--light-bg);
   color: var(--muted);
