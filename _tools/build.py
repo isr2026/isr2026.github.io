@@ -2517,20 +2517,97 @@ f"""
 
 # ---------------------------------------------------------------- Committee
 
-COMMITTEE = [
-    ("General Chair",           "Tamio Tanikawa",   "AIST, Japan"),
-    ("General Co-Chair",        "Akio Noda",        "Osaka Institute of Technology, Japan"),
-    ("Program Chair",           "Kazutsugu Suita",  "Daido University, Japan"),
-    ("Program Co-Chair",        "Kuniaki Kawabata", "JAEA, Japan"),
-    ("Finance Chair",           "Kenichi Ohara",    "Meijo University, Japan"),
-    ("Local Arrangement Chair", "Tomohito Takubo",  "Osaka Metropolitan University, Japan"),
+# Everything below is from the General Chair's 3_2_Committee_v3.docx, received
+# 2026-11-13. It is the first full committee list we have had: before this the
+# page carried six chairs and "to be announced" for the program committee.
+#
+# Four corrections of ours, nothing else changed:
+#   - "IHI Corpration" -> "IHI Corporation" (the same file spells it correctly
+#     under Award Chair).
+#   - "Nippon Electric Control, Equipment Industries Association" -> no comma;
+#     that is the association's name.
+#   - "Nagaoka University of Technology,    Japan" -> single space.
+#   - Thomas Bömer is the only Advisory Council member with no country; ",
+#     Germany" added, as the same file gives for him under Associate Editors.
+# The file heads a single name with "Publication Chairs"; published here as
+# "Publication Chair" to agree with the one name listed.
+#
+# NOT published: the file's note "1名増えるかもしれません" (one more Advisory
+# Council member may be added) is an internal remark, not website content.
+#
+# Yoji Yamada appears twice with different affiliations - Nagoya University on
+# the Advisory Council, Tokai Innovation Institute as an Associate Editor.
+# That is how the file has it; raised with the General Chair 2026-11-13.
+
+ADVISORY = [
+    ("Toshio Fukuda",          "Nagoya University, Waseda University, Japan"),
+    ("Tatsuo Arai",            "The University of Electro-Communications, Japan"),
+    ("Hajime Asama",           "The University of Tokyo, Japan"),
+    ("Yoji Yamada",            "Nagoya University, Japan"),
+    ("Toshihiro Fujita",       "Nippon Electric Control Equipment Industries Association (NECA), Japan"),
+    ("Jean-Christophe Blaise", "INRS, Institut National de Recherche et de Sécurité, France"),
+    ("Damien Burlet-Vienney",  "IRSST, Institut de recherche Robert-Sauvé en santé et en sécurité du travail, Canada"),
+    ("Thomas Bömer",           "IFA &ndash; Institute for Occupational Safety and Health of the German Social "
+                               "Accident Insurance (DGUV), Germany"),
 ]
+
+COMMITTEE = [
+    ("General Chair",           [("Tamio Tanikawa",      "AIST, Japan")]),
+    ("General Co-Chair",        [("Akio Noda",           "Osaka Institute of Technology, Japan")]),
+    ("Program Chair",           [("Kazutsugu Suita",     "Daido University, Japan")]),
+    ("Program Co-Chair",        [("Kuniaki Kawabata",    "Japan Atomic Energy Agency, Japan")]),
+    ("Publicity Chairs",        [("Keiko Ishii",         "Chuo University, Japan"),
+                                 ("Shigemune Mitsugochi", "NECA, Japan"),
+                                 ("Photchara Ratsamee",  "Kansai University, Japan")]),
+    ("Publication Chair",       [("Yasushi Mae",         "Kansai University, Japan")]),
+    ("Award Chair",             [("Hiroki Murakami",     "IHI Corporation, Japan")]),
+    ("Finance Chair",           [("Kenichi Ohara",       "Meijo University, Japan")]),
+    ("Local Arrangement Chair", [("Tomohito Takubo",     "Osaka Metropolitan University, Japan")]),
+]
+
+ASSOCIATE_EDITORS = [
+    ("Jean-Christophe Blaise",   "Institut National de Recherche et de Sécurité, France"),
+    ("Damien Burlet-Vienney",    "IRSST &ndash; Institut de recherche Robert-Sauvé en santé et en sécurité du travail, Canada"),
+    ("Thomas Bömer",             "DGUV / IFA, Germany"),
+    ("Kuniaki Kawabata",         "Japan Atomic Energy Agency, Japan"),
+    ("Bong Keun Kim",            "National Institute of Advanced Industrial Science and Technology (AIST), Japan"),
+    ("Tetsuya Kimura",           "Nagaoka University of Technology, Japan"),
+    ("Jyrki Matias Latokartano", "Tampere University, Finland"),
+    ("Hideki Masago",            "Nagaoka University of Technology, Japan"),
+    ("Takao Miyoshi",            "CYBERNET MBSE Co., Ltd., Japan"),
+    ("Hiroki Murakami",          "IHI Corporation, Japan"),
+    ("Yoshihiro Nakabo",         "National Institute of Advanced Industrial Science and Technology, Japan"),
+    ("Keita Nakamura",           "Sapporo University, Japan"),
+    ("Masayuki Okugawa",         "Aichi Institute of Technology, Japan"),
+    ("Tsuyoshi Saito",           "National Institute of Occupational Safety and Health, Japan (JNIOSH), Japan"),
+    ("Kengo Takahashi",          "Nagaoka University of Technology, Japan"),
+    ("Tomohiro Umetani",         "Konan University, Japan"),
+    ("Taichi Yamada",            "Japan Atomic Energy Agency, Japan"),
+    ("Yoji Yamada",              "Tokai Innovation Institute, Japan"),
+    ("Sho Yokota",               "Toyo University, Japan"),
+    ("Jan Zimmermann",           "Institute for Occupational Safety and Health of the DGUV (IFA), Germany"),
+]
+
+def _people(people):
+    return "\n".join(f"""          <div class="person">
+            <div class="name">{name}</div>
+            <div class="affil">{affil}</div>
+          </div>""" for name, affil in people)
 
 cards = "\n".join(f"""        <article class="card person-card">
           <div class="role">{role}</div>
-          <div class="name">{name}</div>
-          <div class="affil">{affil}</div>
-        </article>""" for role, name, affil in COMMITTEE)
+{_people(people)}
+        </article>""" for role, people in COMMITTEE)
+
+def _name_list(people):
+    items = "\n".join(f"""          <li>
+            <div class="name">{name}</div>
+            <div class="affil">{affil}</div>
+          </li>""" for name, affil in people)
+    return '        <ul class="name-list">\n%s\n        </ul>' % items
+
+advisory_list = _name_list(ADVISORY)
+editor_list   = _name_list(ASSOCIATE_EDITORS)
 
 write("committee.html", "Committee",
       f"Organizing committee of {CONF_TITLE}.",
@@ -2552,10 +2629,25 @@ f"""
 
     <section class="section">
       <div class="section-heading">
-        <span class="kicker">Program Committee</span>
-        <h2>International Program Committee</h2>
+        <span class="kicker">Advisory</span>
+        <h2>Advisory Council</h2>
       </div>
-{tba('The full list of International Program Committee members and reviewers will be published here.')}
+{advisory_list}
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <span class="kicker">Review</span>
+        <h2>Program Committee</h2>
+        <p>
+          The Program Committee is chaired by <strong>Kazutsugu Suita</strong> (Daido University,
+          Japan) with <strong>Kuniaki Kawabata</strong> (Japan Atomic Energy Agency, Japan) as
+          Program Co-Chair.
+        </p>
+      </div>
+
+      <h3>Associate Editors</h3>
+{editor_list}
     </section>
 
     <section class="section">

@@ -375,6 +375,24 @@ main {
 }
 .person-card .name { font-weight: 700; color: var(--deep-blue); font-size: 17px; }
 .person-card .affil { color: var(--muted); font-size: 14px; }
+.person-card .person + .person { margin-top: 14px; }
+
+/* Plain two-column roll of names: advisory council, associate editors. */
+.name-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.name-list li { padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.name-list .name { font-weight: 700; color: var(--deep-blue); }
+.name-list .affil { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 620px) {
+  .name-list { grid-template-columns: 1fr; }
+}
 
 /* ===== Important dates ===== */
 
