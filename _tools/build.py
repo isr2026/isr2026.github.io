@@ -296,6 +296,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-11-17">
+            <span class="announcement-date">November 17, 2026</span>
+            <a href="registration.html">
+              Early-bird rate extended to November 20, 2026; the Regular rate is withdrawn
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-11-06">
             <span class="announcement-date">November 6, 2026</span>
             <a href="poster.html">
@@ -713,14 +720,9 @@ f"""
               <td>Open</td>
             </tr>
             <tr>
-              <td><span class="date-old">November 6, 2026</span><br /><span class="date-new">November 13, 2026</span></td>
-              <td>Early-bird registration deadline (23:59 JST)</td>
+              <td><span class="date-old">November 6, 2026</span><br /><span class="date-old">November 13, 2026</span><br /><span class="date-new">November 20, 2026</span></td>
+              <td>Early-bird registration deadline, and the close of online registration (23:59 JST)</td>
               <td>Extended</td>
-            </tr>
-            <tr>
-              <td>November 20, 2026</td>
-              <td>Regular registration deadline (23:59 JST)</td>
-              <td>Scheduled</td>
             </tr>
             <tr>
               <td>December 2&ndash;4, 2026</td>
@@ -740,7 +742,7 @@ f"""
 write("registration.html", "Registration",
       f"Registration information and fees for {CONF_TITLE}.",
 hero("Registration", "Registration",
-     "Registration rates, categories, and the online registration system will be announced here.") +
+     "Online registration is open until 23:59 JST on November 20, 2026, at the early-bird rate.") +
 f"""
   <main id="main">
 
@@ -767,8 +769,41 @@ f"""
         November 6. The Program Chair confirmed November 13 is correct. The
         payment and cancellation blocks on JTB's own page were still showing
         November 6 when this was published - that page is JTB's, not ours.
+
+        REGULAR TIER REMOVED, 2026-11-17, at the Program Chair's request:
+        "Regular Registrationの項目をなくして、11/20までEarlyレジストレーション
+        としてください。Earlyレジストレーションと、on-siteのみの扱いに変えます。"
+        So there are now two rates, not three: Early Bird for every online
+        registration up to 23:59 JST on November 20, and On-Site at the venue.
+        The old Early Bird column kept its prices and took over the Regular
+        column's November 20 date; the Regular column was deleted and On-Site
+        prices are unchanged.
+
+        Two consequences raised with the Program Chair the same day, both of
+        them outside this repository:
+          - The JTB site sells the Regular rate too. It has to be changed
+            there as well, or the site and the page disagree on the price.
+          - The old early-bird deadline was November 13 and today is the 17th,
+            so anyone who registered in between was charged the Regular rate
+            under rules this page published. That is a refund question for the
+            committee and JTB, not a website question.
         ==========================================================================
       -->
+      <div class="notice-box">
+        <div class="notice-icon" aria-hidden="true">!</div>
+        <div>
+          <strong>Early-bird rate extended to November 20, 2026 &mdash; November 17, 2026</strong>
+          <p>
+            The separate Regular rate has been withdrawn. <strong>Every online registration
+            completed by 23:59 JST on November 20, 2026 is charged at the early-bird rate.</strong>
+          </p>
+          <p>
+            After November 20, registration is available <strong>on-site at the venue only</strong>,
+            at the on-site rate.
+          </p>
+        </div>
+      </div>
+
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
@@ -802,9 +837,13 @@ f"""
               accepting registrations.
             </p>
             <p>
-              Early-bird registration has been <strong>extended to 23:59 JST on November 13,
-              2026</strong>, and regular registration closes at
-              <strong>23:59 JST on November 20, 2026</strong>.
+              <strong>The early-bird rate now applies to every online registration</strong>, up to
+              <strong>23:59 JST on November 20, 2026</strong>, when online registration closes.
+              The separate Regular rate has been withdrawn.
+            </p>
+            <p>
+              After November 20 you can still register <strong>on-site at the venue</strong>, from
+              08:30 on December 2, at the on-site rate.
             </p>
           </div>
         </div>
@@ -842,8 +881,7 @@ f"""
           <thead>
             <tr>
               <th scope="col">Category</th>
-              <th scope="col">Early Bird<br /><span class="fee-when">on or before 23:59, November 13, 2026</span></th>
-              <th scope="col">Regular<br /><span class="fee-when">on or before 23:59, November 20, 2026</span></th>
+              <th scope="col">Early Bird<br /><span class="fee-when">online, on or before 23:59, November 20, 2026</span></th>
               <th scope="col">On-Site<br /><span class="fee-when">08:30 December 2 to 18:00 December 4, 2026</span></th>
             </tr>
           </thead>
@@ -852,23 +890,19 @@ f"""
               <th scope="row">IEEE Member</th>
               <td>&yen;70,000</td>
               <td>&yen;80,000</td>
-              <td>&yen;80,000</td>
             </tr>
             <tr>
               <th scope="row">NECA Member</th>
               <td>&yen;70,000</td>
-              <td>&yen;80,000</td>
               <td>&yen;80,000</td>
             </tr>
             <tr>
               <th scope="row">Non-member</th>
               <td>&yen;85,000</td>
               <td>&yen;95,000</td>
-              <td>&yen;95,000</td>
             </tr>
             <tr>
               <th scope="row">IEEE Life Member</th>
-              <td>Free</td>
               <td>Free</td>
               <td>Free</td>
             </tr>
@@ -876,24 +910,23 @@ f"""
               <th scope="row">IEEE Member (Student)</th>
               <td>&yen;35,000</td>
               <td>&yen;40,000</td>
-              <td>&yen;40,000</td>
             </tr>
             <tr>
               <th scope="row">Non-member (Student)</th>
               <td>&yen;43,000</td>
               <td>&yen;48,000</td>
-              <td>&yen;48,000</td>
             </tr>
             <tr>
               <th scope="row">Accompanying person</th>
-              <td colspan="3">&yen;10,000 &mdash; same at every stage</td>
+              <td colspan="2">&yen;10,000 &mdash; same at every stage</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p style="color: var(--muted); font-size: 14px; margin-top: 14px;">
-        Regular and On-Site registration are charged at the same amount.
+        There are two rates only. Everyone who registers online by November 20 pays the Early Bird
+        rate; after that, registration is possible at the venue only, at the On-Site rate.
       </p>
     </section>
 
