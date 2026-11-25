@@ -86,10 +86,17 @@ def _nav(page):
 # Pacific is PST and November 20 lands at 2026-11-21 07:59:59 UTC. The banner
 # had already hidden itself on 2026-11-14 under the old date and comes back
 # with this change. Not shown on the poster page itself.
+#
+# RETIRED 2026-11-25. The call closed on November 20 and the banner had already
+# hidden itself in the browser; it is now switched off at the source so the
+# markup is not emitted on twelve pages at all. Everything below is kept intact
+# so the strip can be brought back by deleting the early return - set
+# POSTER_CLOSES_UTC and the date in the text first.
 POSTER_CLOSES_UTC = "2026-11-21T08:00:00Z"
+POSTER_BANNER_RETIRED = True
 
 def poster_banner(page):
-    if page == "poster.html":
+    if POSTER_BANNER_RETIRED or page == "poster.html":
         return ""
     return """
   <div class="site-banner" id="poster-banner">
@@ -275,13 +282,13 @@ f"""
         <img class="poster-cta-photo" src="assets/img/poster-session-1.jpg" width="1400" height="1050"
              alt="Attendees discussing posters with presenters at a poster session" />
         <div class="poster-cta-body">
-          <div class="status-label">&#9679; Call for Posters &mdash; open now</div>
-          <h2 id="poster-cta-title">Poster Session</h2>
-          <p class="poster-cta-deadline">Submit by <strong>November 20, 2026</strong></p>
-          <p>Work in progress, late-breaking results and industrial case studies. Abstract + one-page PDF, no peer review.</p>
-          <a class="btn btn-accent btn-lg btn-block" href="poster.html">Submit a Poster &rarr;</a>
+          <div class="status-label is-open">&#9679; Program published</div>
+          <h2 id="poster-cta-title">Conference Program</h2>
+          <p class="poster-cta-deadline">December 2&ndash;4, 2026 &middot; INTEX Osaka</p>
+          <p>Oral sessions in two rooms, two poster sessions and two plenary talks. Paper titles, authors and abstracts are online.</p>
+          <a class="btn btn-accent btn-lg btn-block" href="program.html">Program at a Glance &rarr;</a>
           <p class="poster-cta-next">
-            Accepted papers: camera-ready due <strong>November 2, 2026</strong> &middot;
+            Presenting? See the <a href="presentation.html">presentation guidelines</a> &middot;
             <a href="dates.html">All dates</a>
           </p>
         </div>
@@ -299,6 +306,13 @@ f"""
 
       <div class="card">
         <ul class="announcement-list">
+          <li class="announcement-item" data-date="2026-11-25">
+            <span class="announcement-date">November 25, 2026</span>
+            <a href="registration.html">
+              Poster submission and online registration are closed; on-site registration opens December 2
+            </a>
+          </li>
+
           <li class="announcement-item" data-date="2026-11-19">
             <span class="announcement-date">November 19, 2026</span>
             <a href="poster.html">
@@ -485,12 +499,12 @@ f"""
 
     <section class="footer-cta">
       <div>
-        <h2>Notifications have been sent</h2>
-        <p>Authors of accepted papers: please submit your camera-ready paper by November 2, 2026.</p>
+        <h2>See you in Osaka</h2>
+        <p>Every submission and registration deadline has passed. On-site registration opens at 08:30 on December 2.</p>
       </div>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="submission.html">Paper Submission</a>
-        <a class="btn btn-outline" href="poster.html">Submit a Poster</a>
+        <a class="btn btn-primary" href="program.html">Conference Program</a>
+        <a class="btn btn-outline" href="presentation.html">Presentation Guidelines</a>
       </div>
     </section>
 
@@ -647,10 +661,11 @@ f"""
         <div>
           <strong>Paper submission closed on September 5, 2026.</strong>
           <p>
-            Notifications of acceptance were sent on <strong>October 20, 2026</strong>.
-            The next milestone is <a href="poster.html">poster abstracts</a> on
-            <strong>November 20, 2026</strong>. Camera-ready final papers were due
-            <strong>November 2, 2026</strong>. The
+            Notifications of acceptance were sent on <strong>October 20, 2026</strong>,
+            camera-ready final papers were due <strong>November 2, 2026</strong>, and
+            <a href="poster.html">poster abstracts</a> closed on
+            <strong>November 20, 2026</strong>. Every submission deadline has now passed;
+            the next milestone is the conference itself. The
             <a href="{CFP_PDF}" target="_blank" rel="noopener noreferrer">CFP PDF</a>
             is the official reference document.
           </p>
@@ -691,7 +706,7 @@ f"""
             <tr>
               <td><span class="date-old">October 30, 2026</span><br /><span class="date-old">November 6, 2026</span><br /><span class="date-old">November 13, 2026</span><br /><span class="date-new">November 20, 2026</span></td>
               <td>Deadline for <a href="poster.html">poster abstract</a> submission</td>
-              <td>Extended</td>
+              <td>Closed</td>
             </tr>
             <tr>
               <td><span class="date-old">October 13, 2026</span><br /><span class="date-new">November 2, 2026</span></td>
@@ -727,12 +742,12 @@ f"""
             <tr>
               <td>October 30, 2026</td>
               <td>Online <a href="registration.html">registration</a> opens (12:00 JST)</td>
-              <td>Open</td>
+              <td>Opened</td>
             </tr>
             <tr>
               <td><span class="date-old">November 6, 2026</span><br /><span class="date-old">November 13, 2026</span><br /><span class="date-new">November 20, 2026</span></td>
               <td>Early-bird registration deadline, and the close of online registration (23:59 JST)</td>
-              <td>Extended</td>
+              <td>Closed</td>
             </tr>
             <tr>
               <td>December 2&ndash;4, 2026</td>
@@ -752,7 +767,7 @@ f"""
 write("registration.html", "Registration",
       f"Registration information and fees for {CONF_TITLE}.",
 hero("Registration", "Registration",
-     "Online registration is open until 23:59 JST on November 20, 2026, at the early-bird rate.") +
+     "Online registration closed on November 20, 2026. On-site registration opens at INTEX Osaka on December 2.") +
 f"""
   <main id="main">
 
@@ -797,19 +812,27 @@ f"""
             so anyone who registered in between was charged the Regular rate
             under rules this page published. That is a refund question for the
             committee and JTB, not a website question.
+
+        ONLINE REGISTRATION CLOSED, 2026-11-20. Checked on the JTB site on
+        2026-11-25 before changing this page: its top page now answers "Create
+        My Page" with "Applications are currently not accepted", and its guide
+        page shows the same two tiers we do, with the payment deadline struck
+        through from November 6 to November 20. So JTB did carry the two-tier
+        change through. This page no longer offers a registration button; the
+        JTB link is kept only for people who already registered.
         ==========================================================================
       -->
       <div class="notice-box">
         <div class="notice-icon" aria-hidden="true">!</div>
         <div>
-          <strong>Early-bird rate extended to November 20, 2026 &mdash; November 17, 2026</strong>
+          <strong>Online registration closed on November 20, 2026</strong>
           <p>
-            The separate Regular rate has been withdrawn. <strong>Every online registration
-            completed by 23:59 JST on November 20, 2026 is charged at the early-bird rate.</strong>
+            Registration is now possible <strong>on-site at INTEX Osaka only</strong>, from 08:30
+            on December 2 to 18:00 on December 4, at the on-site rate shown below.
           </p>
           <p>
-            After November 20, registration is available <strong>on-site at the venue only</strong>,
-            at the on-site rate.
+            Every online registration completed by the deadline was charged at the early-bird
+            rate; the separate Regular rate was withdrawn on November 17.
           </p>
         </div>
       </div>
@@ -842,33 +865,35 @@ f"""
           </div>
           <div class="prose">
             <p>
-              Registration is handled through the conference registration site, operated by JTB.
-              The site <strong>opened at 12:00 JST on October 30, 2026</strong> and is now
-              accepting registrations.
+              Online registration ran through the conference registration site operated by JTB,
+              from 12:00 JST on October 30 to <strong>23:59 JST on November 20, 2026</strong>.
+              It is now <strong>closed</strong>, and the JTB site no longer accepts applications.
             </p>
             <p>
-              <strong>The early-bird rate now applies to every online registration</strong>, up to
-              <strong>23:59 JST on November 20, 2026</strong>, when online registration closes.
-              The separate Regular rate has been withdrawn.
+              <strong>You can still register on-site at INTEX Osaka</strong>, from 08:30 on
+              December 2, at the on-site rate in the table below.
             </p>
             <p>
-              After November 20 you can still register <strong>on-site at the venue</strong>, from
-              08:30 on December 2, at the on-site rate.
+              If you registered online and have a question about your booking or payment, contact
+              us at <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>.
             </p>
           </div>
         </div>
 
         <div class="card">
-          <h3>Registration site</h3>
-          <p class="status-label is-open">&#9679; Open now</p>
-          <p>Open since <strong>12:00 JST, October 30, 2026</strong>.</p>
+          <h3>Register on-site</h3>
+          <p class="status-label">&#9679; Online registration closed</p>
           <p>
-            <a class="btn btn-primary btn-lg btn-block" href="{REGISTRATION_URL}"
-               target="_blank" rel="noopener noreferrer">
-              Go to Registration &rarr;
+            The registration desk at INTEX Osaka is open from <strong>08:30 on December 2</strong>
+            to <strong>18:00 on December 4, 2026</strong>.
+          </p>
+          <p>
+            <a class="btn btn-primary btn-lg btn-block" href="venue.html">
+              Venue &amp; Access &rarr;
             </a>
           </p>
           <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
+            The JTB site remains online for existing registrations:
             <a href="{REGISTRATION_URL}" target="_blank" rel="noopener noreferrer">{REGISTRATION_URL}</a>
           </p>
         </div>
@@ -1193,7 +1218,7 @@ f"""
 write("poster.html", "Poster Presentation",
       f"Poster presentation submission and presentation details for {CONF_TITLE}.",
 hero("Poster Presentation", "Poster Presentation",
-     "Submit a short abstract through PaperPlaza and present your work on an A0 poster board in Osaka.") +
+     "Submission closed on November 20, 2026. Poster presenters: what to bring to Osaka is below.") +
 f"""
   <main id="main">
 
@@ -1225,6 +1250,12 @@ f"""
       Program Chair, not here. If authors report the system has closed, that is
       why; check the log before assuming the website is wrong.
 
+      CLOSED on 2026-11-20; the Program Chair confirmed it on 2026-11-25 and
+      this page now says so. No submit button and no PaperPlaza link for new
+      abstracts. The page itself is kept, not deleted: it still explains what
+      a poster contribution is, and poster presenters are sent from here to
+      the presentation guidelines.
+
       CONFIRMED by the General Chair:
         - Submission goes through PaperPlaza, same as regular papers. A poster
           track already exists there; the website only needs to link to it.
@@ -1248,15 +1279,14 @@ f"""
     -->
 
     <section class="section">
-      <div class="notice-box success">
-        <div class="notice-icon" aria-hidden="true">&#10003;</div>
+      <div class="notice-box info">
+        <div class="notice-icon" aria-hidden="true">i</div>
         <div>
-          <strong>Poster submission is open.</strong>
+          <strong>Poster submission closed on November 20, 2026.</strong>
           <p>
-            Submit through IEEE RAS PaperPlaza by <strong>November 20, 2026</strong>
-            (23:59:59 Pacific Time). On the PaperPlaza page, select
-            <strong>ISR-SIAS 2026</strong>, then choose <strong>Poster Paper</strong> from the list
-            of submission types.
+            PaperPlaza is no longer accepting poster abstracts. If you are presenting a poster,
+            see the <a href="presentation.html">presentation guidelines</a> for poster size and
+            the <a href="program.html">program</a> for your session.
           </p>
         </div>
       </div>
@@ -1382,19 +1412,17 @@ f"""
         </div>
 
         <div class="card">
-          <h3>Submit your poster abstract</h3>
+          <h3>Submission has closed</h3>
           <p>
-            The poster track is open until <strong>November 20, 2026</strong>.
+            The poster track closed on <strong>November 20, 2026</strong>.
           </p>
           <p>
-            <a class="btn btn-primary btn-lg btn-block"
-               href="{SUBMIT_URL}"
-               target="_blank" rel="noopener noreferrer">
-              Submit Your Poster &rarr;
+            <a class="btn btn-primary btn-lg btn-block" href="presentation.html">
+              Presentation Guidelines &rarr;
             </a>
           </p>
           <p style="color: var(--muted); font-size: 14px; margin-bottom: 0;">
-            You do not need to log in to make a first submission.
+            Poster size, board width and what to bring to Osaka.
           </p>
         </div>
       </div>
@@ -1420,12 +1448,12 @@ f"""
             <tr>
               <td>September 22, 2026</td>
               <td>Poster submission opens on PaperPlaza</td>
-              <td>Open</td>
+              <td>Opened</td>
             </tr>
             <tr>
               <td><span class="date-old">October 30, 2026</span><br /><span class="date-old">November 6, 2026</span><br /><span class="date-old">November 13, 2026</span><br /><span class="date-new">November 20, 2026</span></td>
               <td>Deadline for poster abstract submission</td>
-              <td>Extended</td>
+              <td>Closed</td>
             </tr>
             <tr>
               <td>December 2&ndash;4, 2026</td>
