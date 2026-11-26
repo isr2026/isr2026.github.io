@@ -860,6 +860,23 @@ details p { color: var(--muted); margin: 12px 0 0; }
 }
 .nav-menu a[aria-current="page"] { background: var(--light-bg); color: var(--ieee-blue); }
 
+/* Access map on the venue page: one wide figure with a caption under it. */
+.venue-map { margin: 0; }
+.venue-map a { display: block; }
+.venue-map img {
+  width: 100%;
+  height: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.venue-map figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 /* ===== Responsive ===== */
 
 @media (max-width: 980px) {
